@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Tripie-Admin</string>
+    <string name="app_name">Tripie Admin</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tripie_slogan">Take Off With Confidence</string>
+    <string name="masuk">Masuk</string>
 </resources>
