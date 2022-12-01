@@ -3,15 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Materi-Kuliah/AndroidStudioProjects/Tripie-Admin/app/src/main/res/layout/activity_main.xml" value="0.11296859169199595" />
-        <entry key="..\:/Materi-Kuliah/AndroidStudioProjects/Tripie-Admin/app/src/main/res/layout/activity_splash_screen.xml" value="0.23229166666666667" />
-        <entry key="..\:/Materi-Kuliah/AndroidStudioProjects/Tripie-Admin/app/src/main/res/layout/fragment_dashboard.xml" value="0.23229166666666667" />
-        <entry key="..\:/Materi-Kuliah/AndroidStudioProjects/Tripie-Admin/app/src/main/res/layout/fragment_splash_screen.xml" value="0.11296859169199595" />
         <entry key="..\:/StudioProjects/Tripie-Admin/app/src/main/res/drawable/button_blue_rounded.xml" value="0.224" />
+        <entry key="..\:/StudioProjects/Tripie-Admin/app/src/main/res/drawable/ic_home.xml" value="0.1955" />
+        <entry key="..\:/StudioProjects/Tripie-Admin/app/src/main/res/drawable/ic_plane.xml" value="0.2425" />
+        <entry key="..\:/StudioProjects/Tripie-Admin/app/src/main/res/drawable/ic_trolly.xml" value="0.2425" />
         <entry key="..\:/StudioProjects/Tripie-Admin/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/StudioProjects/Tripie-Admin/app/src/main/res/layout/fragment_booked_ticket.xml" value="0.21422101449275363" />
+        <entry key="..\:/StudioProjects/Tripie-Admin/app/src/main/res/layout/fragment_flight.xml" value="0.15715579710144928" />
         <entry key="..\:/StudioProjects/Tripie-Admin/app/src/main/res/layout/fragment_login_admin.xml" value="0.22239583333333332" />
         <entry key="..\:/StudioProjects/Tripie-Admin/app/src/main/res/layout/fragment_splash_screen.xml" value="0.22826086956521738" />
-        <entry key="..\:/StudioProjects/Tripie-Admin/app/src/main/res/menu/drawer_menu.xml" value="0.23645833333333333" />
+        <entry key="..\:/StudioProjects/Tripie-Admin/app/src/main/res/menu/drawer_menu.xml" value="0.4" />
       </map>
     </option>
   </component>
