@@ -1,35 +1,27 @@
-package binar.academy.kelompok6.tripie_admin.view.authentication
+package binar.academy.kelompok6.tripie_admin.view.dashboard
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import binar.academy.kelompok6.tripie_admin.R
-import binar.academy.kelompok6.tripie_admin.databinding.FragmentLoginAdminBinding
-import binar.academy.kelompok6.tripie_admin.view.MainActivity
+import binar.academy.kelompok6.tripie_admin.databinding.FragmentDashboardBinding
 
-class LoginAdminFragment : Fragment() {
-    private var _binding : FragmentLoginAdminBinding? = null
+class DashboardFragment : Fragment() {
+    private var _binding : FragmentDashboardBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-       _binding = FragmentLoginAdminBinding.inflate(inflater, container, false)
+        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        binding.btnLogin.setOnClickListener {
-            val intent = Intent(requireActivity(), MainActivity::class.java)
-            startActivity(intent)
-            requireActivity().finish()
-        }
     }
 
     override fun onDestroyView() {

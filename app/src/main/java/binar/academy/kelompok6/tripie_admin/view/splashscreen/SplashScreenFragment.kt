@@ -1,6 +1,5 @@
 package binar.academy.kelompok6.tripie_admin.view.splashscreen
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -12,7 +11,6 @@ import androidx.navigation.fragment.findNavController
 import binar.academy.kelompok6.tripie_admin.R
 import binar.academy.kelompok6.tripie_admin.databinding.FragmentSplashScreenBinding
 
-@SuppressLint("CustomSplashScreen")
 class SplashScreenFragment : Fragment() {
     private var _binding : FragmentSplashScreenBinding? = null
     private val binding get() = _binding!!
