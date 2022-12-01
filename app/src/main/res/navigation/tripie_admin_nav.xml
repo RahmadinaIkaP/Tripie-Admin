@@ -11,12 +11,12 @@
         tools:layout="@layout/fragment_dashboard" />
     <fragment
         android:id="@+id/flightFragment"
-        android:name="binar.academy.kelompok6.tripie_admin.view.drawer_item_fragment.FlightFragment"
+        android:name="binar.academy.kelompok6.tripie_admin.view.flightlist.FlightFragment"
         android:label="fragment_flight"
         tools:layout="@layout/fragment_flight" />
     <fragment
         android:id="@+id/bookedTicketFragment"
-        android:name="binar.academy.kelompok6.tripie_admin.view.drawer_item_fragment.BookedTicketFragment"
+        android:name="binar.academy.kelompok6.tripie_admin.view.bookedticketlist.BookedTicketFragment"
         android:label="fragment_booked_ticket"
         tools:layout="@layout/fragment_booked_ticket" />
 </navigation>
