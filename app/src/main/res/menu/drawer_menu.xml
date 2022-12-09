@@ -13,7 +13,7 @@
         android:checkableBehavior="single">
         <item
             android:id="@+id/flightFragment"
-            android:icon="@drawable/ic_plane"
+            android:icon="@drawable/ic_plane_blue"
             android:title="@string/daftar_penerbangan"/>
         <item
             android:id="@+id/bookedTicketFragment"

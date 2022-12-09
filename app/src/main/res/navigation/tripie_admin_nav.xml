@@ -13,10 +13,28 @@
         android:id="@+id/flightFragment"
         android:name="binar.academy.kelompok6.tripie_admin.view.flightlist.FlightFragment"
         android:label="fragment_flight"
-        tools:layout="@layout/fragment_flight" />
+        tools:layout="@layout/fragment_flight" >
+        <action
+            android:id="@+id/action_flightFragment_to_editFlightFragment"
+            app:destination="@id/editFlightFragment" />
+    </fragment>
     <fragment
         android:id="@+id/bookedTicketFragment"
         android:name="binar.academy.kelompok6.tripie_admin.view.bookedticketlist.BookedTicketFragment"
         android:label="fragment_booked_ticket"
-        tools:layout="@layout/fragment_booked_ticket" />
+        tools:layout="@layout/fragment_booked_ticket" >
+        <action
+            android:id="@+id/action_bookedTicketFragment_to_detailTicketBookedFragment"
+            app:destination="@id/detailTicketBookedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editFlightFragment"
+        android:name="binar.academy.kelompok6.tripie_admin.view.flightlist.EditFlightFragment"
+        android:label="fragment_edit_flight"
+        tools:layout="@layout/fragment_edit_flight" />
+    <fragment
+        android:id="@+id/detailTicketBookedFragment"
+        android:name="binar.academy.kelompok6.tripie_admin.view.bookedticketlist.DetailTicketBookedFragment"
+        android:label="fragment_detail_ticket_booked"
+        tools:layout="@layout/fragment_detail_ticket_booked" />
 </navigation>

@@ -40,7 +40,7 @@
                 android:layout_height="40dp"
                 android:layout_marginStart="16dp"
                 android:background="@color/biru_ungu"
-                android:src="@drawable/ic_plane"
+                android:src="@drawable/ic_plane_white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

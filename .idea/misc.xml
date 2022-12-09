@@ -3,19 +3,32 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Materi-Kuliah/AndroidStudioProjects/Tripie-Admin/app/src/main/res/drawable/blue_dashed_line.xml" value="0.124" />
+        <entry key="..\:/Materi-Kuliah/AndroidStudioProjects/Tripie-Admin/app/src/main/res/drawable/ic_add.xml" value="0.214" />
+        <entry key="..\:/Materi-Kuliah/AndroidStudioProjects/Tripie-Admin/app/src/main/res/drawable/ic_arrow.xml" value="0.183" />
+        <entry key="..\:/Materi-Kuliah/AndroidStudioProjects/Tripie-Admin/app/src/main/res/drawable/ic_plane_white.xml" value="0.124" />
+        <entry key="..\:/Materi-Kuliah/AndroidStudioProjects/Tripie-Admin/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Materi-Kuliah/AndroidStudioProjects/Tripie-Admin/app/src/main/res/layout/activity_splash_screen.xml" value="0.23229166666666667" />
+        <entry key="..\:/Materi-Kuliah/AndroidStudioProjects/Tripie-Admin/app/src/main/res/layout/appbar_dashboard.xml" value="0.11271529888551166" />
+        <entry key="..\:/Materi-Kuliah/AndroidStudioProjects/Tripie-Admin/app/src/main/res/layout/dialog_flight_filter.xml" value="0.23229166666666667" />
+        <entry key="..\:/Materi-Kuliah/AndroidStudioProjects/Tripie-Admin/app/src/main/res/layout/dialog_sorting_price.xml" value="0.23229166666666667" />
+        <entry key="..\:/Materi-Kuliah/AndroidStudioProjects/Tripie-Admin/app/src/main/res/layout/drawer_header.xml" value="0.23229166666666667" />
+        <entry key="..\:/Materi-Kuliah/AndroidStudioProjects/Tripie-Admin/app/src/main/res/layout/flight_filter_dialog.xml" value="0.23229166666666667" />
+        <entry key="..\:/Materi-Kuliah/AndroidStudioProjects/Tripie-Admin/app/src/main/res/layout/fragment_add_flight.xml" value="0.2" />
+        <entry key="..\:/Materi-Kuliah/AndroidStudioProjects/Tripie-Admin/app/src/main/res/layout/fragment_booked_ticket.xml" value="0.23229166666666667" />
+        <entry key="..\:/Materi-Kuliah/AndroidStudioProjects/Tripie-Admin/app/src/main/res/layout/fragment_dashboard.xml" value="0.23229166666666667" />
+        <entry key="..\:/Materi-Kuliah/AndroidStudioProjects/Tripie-Admin/app/src/main/res/layout/fragment_detail_ticket_booked.xml" value="0.23229166666666667" />
+        <entry key="..\:/Materi-Kuliah/AndroidStudioProjects/Tripie-Admin/app/src/main/res/layout/fragment_edit_flight.xml" value="0.23177083333333334" />
+        <entry key="..\:/Materi-Kuliah/AndroidStudioProjects/Tripie-Admin/app/src/main/res/layout/fragment_flight.xml" value="0.264" />
+        <entry key="..\:/Materi-Kuliah/AndroidStudioProjects/Tripie-Admin/app/src/main/res/layout/fragment_splash_screen.xml" value="0.11296859169199595" />
+        <entry key="..\:/Materi-Kuliah/AndroidStudioProjects/Tripie-Admin/app/src/main/res/layout/item_history_booked_ticker.xml" value="0.23229166666666667" />
+        <entry key="..\:/Materi-Kuliah/AndroidStudioProjects/Tripie-Admin/app/src/main/res/layout/item_penerbangan.xml" value="0.264" />
+        <entry key="..\:/Materi-Kuliah/AndroidStudioProjects/Tripie-Admin/app/src/main/res/menu/drawer_menu.xml" value="0.23177083333333334" />
         <entry key="..\:/StudioProjects/Tripie-Admin/app/src/main/res/drawable/button_blue_rounded.xml" value="0.224" />
-        <entry key="..\:/StudioProjects/Tripie-Admin/app/src/main/res/drawable/ic_home.xml" value="0.1955" />
-        <entry key="..\:/StudioProjects/Tripie-Admin/app/src/main/res/drawable/ic_plane.xml" value="0.2425" />
-        <entry key="..\:/StudioProjects/Tripie-Admin/app/src/main/res/drawable/ic_trolly.xml" value="0.2425" />
         <entry key="..\:/StudioProjects/Tripie-Admin/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
-        <entry key="..\:/StudioProjects/Tripie-Admin/app/src/main/res/layout/appbar_dashboard.xml" value="0.20923913043478262" />
-        <entry key="..\:/StudioProjects/Tripie-Admin/app/src/main/res/layout/drawer_header.xml" value="0.264" />
-        <entry key="..\:/StudioProjects/Tripie-Admin/app/src/main/res/layout/fragment_booked_ticket.xml" value="0.21422101449275363" />
-        <entry key="..\:/StudioProjects/Tripie-Admin/app/src/main/res/layout/fragment_flight.xml" value="0.15715579710144928" />
         <entry key="..\:/StudioProjects/Tripie-Admin/app/src/main/res/layout/fragment_login_admin.xml" value="0.22239583333333332" />
         <entry key="..\:/StudioProjects/Tripie-Admin/app/src/main/res/layout/fragment_splash_screen.xml" value="0.22826086956521738" />
-        <entry key="..\:/StudioProjects/Tripie-Admin/app/src/main/res/layout/item_penerbangan.xml" value="0.40150093808630394" />
-        <entry key="..\:/StudioProjects/Tripie-Admin/app/src/main/res/menu/drawer_menu.xml" value="0.4" />
+        <entry key="..\:/StudioProjects/Tripie-Admin/app/src/main/res/menu/drawer_menu.xml" value="0.23645833333333333" />
       </map>
     </option>
   </component>
