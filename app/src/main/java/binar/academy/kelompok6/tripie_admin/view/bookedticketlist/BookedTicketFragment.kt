@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import binar.academy.kelompok6.tripie_admin.databinding.FragmentBookedTicketBinding
 import binar.academy.kelompok6.tripie_admin.view.MainActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class BookedTicketFragment : Fragment() {
     private var _binding : FragmentBookedTicketBinding? = null
     private val binding get() = _binding!!

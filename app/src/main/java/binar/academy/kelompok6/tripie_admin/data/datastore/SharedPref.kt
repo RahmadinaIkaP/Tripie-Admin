@@ -26,7 +26,7 @@ class SharedPref(private val context: Context) {
             it[token] ?: "Undefined"
         }
 
-    suspend fun logoutAdmin(){
+    suspend fun removeToken(){
         context.dataStore.edit {
             it.clear()
         }

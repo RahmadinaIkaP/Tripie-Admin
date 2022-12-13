@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import binar.academy.kelompok6.tripie_admin.R
 import binar.academy.kelompok6.tripie_admin.databinding.FragmentDashboardBinding
 import binar.academy.kelompok6.tripie_admin.view.MainActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DashboardFragment : Fragment() {
     private var _binding : FragmentDashboardBinding? = null
     private val binding get() = _binding!!

@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import binar.academy.kelompok6.tripie_admin.R
 import binar.academy.kelompok6.tripie_admin.databinding.FragmentFlightBinding
 import binar.academy.kelompok6.tripie_admin.view.MainActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class FlightFragment : Fragment() {
     private var _binding : FragmentFlightBinding? = null
     private val binding get() = _binding!!
