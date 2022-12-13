@@ -25,6 +25,8 @@ class FlightFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         (activity as MainActivity).supportActionBar?.title = "Daftar Penerbangan"
+
+
     }
 
     override fun onDestroyView() {

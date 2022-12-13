@@ -41,7 +41,7 @@
                 android:layout_weight="2"
                 android:text="Sort Harga"
                 android:textAllCaps="false"
-                app:icon="@drawable/ic_sort" />
+                app:icon="@drawable/ic_sort_asc" />
 
         </LinearLayout>
 
