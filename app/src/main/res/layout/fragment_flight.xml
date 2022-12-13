@@ -9,52 +9,39 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout4"
         android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_height="80dp"
         android:background="@color/light_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/svFlight"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/svFlight">
+            app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnFilter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="4"
                 android:layout_margin="16dp"
+                android:layout_weight="4"
                 android:text="Filter"
                 android:textAllCaps="false"
-                app:icon="@drawable/ic_filter"/>
+                app:icon="@drawable/ic_filter" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnSortPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
                 android:layout_margin="16dp"
+                android:layout_weight="2"
                 android:text="Sort Harga"
                 android:textAllCaps="false"
-                app:icon="@drawable/ic_sort"/>
+                app:icon="@drawable/ic_sort" />
 
         </LinearLayout>
 

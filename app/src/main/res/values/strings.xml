@@ -9,4 +9,6 @@
     <string name="daftar_pesanan">Daftar Pesanan</string>
     <string name="keluar">Keluar</string>
     <string name="account_info">Account Info</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
 </resources>
