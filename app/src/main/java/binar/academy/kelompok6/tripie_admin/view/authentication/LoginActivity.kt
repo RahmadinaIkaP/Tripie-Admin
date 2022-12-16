@@ -3,6 +3,7 @@ package binar.academy.kelompok6.tripie_admin.view.authentication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -45,14 +46,17 @@ class LoginActivity : AppCompatActivity() {
             when(it){
                 is ApiResponse.Loading -> {
                     showLoading()
+                    Log.d("Loading: ", it.toString())
                 }
                 is ApiResponse.Success -> {
                     stopLoading()
                     processLogin(it.data!!)
+                    Log.d("Success: ", it.toString())
                 }
                 is ApiResponse.Error -> {
                     stopLoading()
                     Toast.makeText(this, it.msg, Toast.LENGTH_SHORT).show()
+                    Log.d("Error: ", it.toString())
                 }
             }
         }
