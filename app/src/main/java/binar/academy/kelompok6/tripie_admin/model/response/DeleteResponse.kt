@@ -3,9 +3,9 @@ package binar.academy.kelompok6.tripie_admin.model.response
 
 import com.google.gson.annotations.SerializedName
 
-data class GetScheduleResponse(
-    @SerializedName("status")
-    val status: String,
+data class DeleteResponse(
     @SerializedName("data")
-    val dataGetSchedule : DataGetSchedule
+    val data: Int,
+    @SerializedName("status")
+    val status: String
 )

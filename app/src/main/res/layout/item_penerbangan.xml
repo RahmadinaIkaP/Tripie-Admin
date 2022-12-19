@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="scheduleData"
+            type="binar.academy.kelompok6.tripie_admin.model.response.Jadwal" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -41,7 +43,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="CGK"
+                    android:text="Kode 1"
                     android:textColor="@color/soft_black"
                     android:textSize="16sp" />
 
@@ -57,7 +59,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="DPS"
+                    android:text="Kode 2"
                     android:textColor="@color/soft_black"
                     android:textSize="16sp" />
 
@@ -73,18 +75,20 @@
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
                 <TextView
+                    android:id="@+id/tvAirlineName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Boeing 737"
+                    android:text='@{scheduleData.airlineName, default="Nama Pesawat"}'
                     android:textColor="@color/gray"
                     android:textSize="14sp"
                     android:fontFamily="@font/poppins"/>
 
                 <TextView
+                    android:id="@+id/tvFlightDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:text="02 Dec 20"
+                    android:text='@{scheduleData.flightDate, default="Tanggal Penerbangan"}'
                     android:textColor="@color/gray"
                     android:textSize="12sp"
                     android:fontFamily="@font/poppins"/>
@@ -124,7 +128,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
-                    android:text="Bisnis"
+                    android:text='@{scheduleData.planeClass, default="Kelas"}'
                     android:textColor="@color/soft_black"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -156,7 +160,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
-                    android:text="07:00"
+                    android:text='@{scheduleData.departureHour, default="Jam Berangkat"}'
                     android:textColor="@color/soft_black"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -188,7 +192,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
-                    android:text="10:00"
+                    android:text='@{scheduleData.arrivalHour, default="Jam Tiba"}'
                     android:textColor="@color/soft_black"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -219,7 +223,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
-                    android:text="IDR 2.500.000"
+                    android:text='@{String.valueOf(scheduleData.price), default="Harga"}'
                     android:textColor="@color/soft_black"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"

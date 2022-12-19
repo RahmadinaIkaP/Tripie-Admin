@@ -3,7 +3,7 @@ package binar.academy.kelompok6.tripie_admin.model.response
 
 import com.google.gson.annotations.SerializedName
 
-data class AddEditScheduleResponse(
+data class AddScheduleResponse(
     @SerializedName("Airline_Name")
     val airlineName: String,
     @SerializedName("Arrival_Hour")

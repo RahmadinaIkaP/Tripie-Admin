@@ -1,6 +1,6 @@
 package binar.academy.kelompok6.tripie_admin.utils
 
-import android.support.test.espresso.idling.CountingIdlingResource
+import androidx.test.espresso.idling.CountingIdlingResource
 
 object EspressoIdlingResource {
     private const val RESOURCE = "GLOBAL"

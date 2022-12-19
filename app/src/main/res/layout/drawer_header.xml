@@ -22,6 +22,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/tvHeaderName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -31,6 +32,7 @@
             android:fontFamily="@font/poppins_medium"/>
 
         <TextView
+            android:id="@+id/tvHeaderEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="bangjono@gmail.com"

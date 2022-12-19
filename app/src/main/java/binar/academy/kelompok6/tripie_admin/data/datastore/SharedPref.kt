@@ -14,16 +14,23 @@ private val Context.dataStore : DataStore<Preferences> by preferencesDataStore(n
 class SharedPref(private val context: Context) {
 
     private val token = stringPreferencesKey("token")
+    private val email = stringPreferencesKey("email")
 
-    suspend fun saveToken(tokens : String){
+    suspend fun saveData(tokens : String, emails : String){
         context.dataStore.edit {
             it[token] = tokens
+            it[email] = emails
         }
     }
 
     val getToken : Flow<String> = context.dataStore.data
         .map {
             it[token] ?: "Undefined"
+        }
+
+    val getEmail : Flow<String> = context.dataStore.data
+        .map {
+            it[email] ?: "Undefined"
         }
 
     suspend fun removeToken(){

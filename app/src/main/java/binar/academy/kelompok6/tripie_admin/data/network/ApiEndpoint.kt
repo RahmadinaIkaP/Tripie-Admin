@@ -2,9 +2,7 @@ package binar.academy.kelompok6.tripie_admin.data.network
 
 import binar.academy.kelompok6.tripie_admin.model.request.AddEditScheduleRequest
 import binar.academy.kelompok6.tripie_admin.model.request.LoginRequest
-import binar.academy.kelompok6.tripie_admin.model.response.AddEditScheduleResponse
-import binar.academy.kelompok6.tripie_admin.model.response.GetScheduleResponse
-import binar.academy.kelompok6.tripie_admin.model.response.LoginResponse
+import binar.academy.kelompok6.tripie_admin.model.response.*
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.DELETE
@@ -29,19 +27,20 @@ interface ApiEndpoint {
     fun addSchedule(
         @Header("Authorization") token: String,
         @Body addEditScheduleRequest: AddEditScheduleRequest
-    ) : Call<AddEditScheduleResponse>
+    ) : Call<AddScheduleResponse>
 
     @PUT("edit-schedule/{id}")
     fun editSchedule(
         @Header("Authorization") token: String,
-        @Path("id") id : String,
-        @Body addEditScheduleRequest: AddEditScheduleRequest) : Call<AddEditScheduleResponse>
+        @Path("id") id : Int,
+        @Body addEditScheduleRequest: AddEditScheduleRequest) : Call<EditScheduleResponse>
 
     @DELETE("delete-schedule/{id}")
     fun deleteSchedule(
         @Header("Authorization") token: String,
         @Path("id") id : Int
-    ) : Call<Int>
+    ) : Call<DeleteResponse>
 
-
+    @GET("history")
+    fun getHistoryBooking()
 }

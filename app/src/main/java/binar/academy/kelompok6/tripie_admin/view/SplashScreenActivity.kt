@@ -6,15 +6,13 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.lifecycle.asLiveData
-import androidx.navigation.fragment.findNavController
-import binar.academy.kelompok6.tripie_admin.R
 import binar.academy.kelompok6.tripie_admin.data.datastore.SharedPref
 import binar.academy.kelompok6.tripie_admin.databinding.ActivitySplashScreenBinding
 import binar.academy.kelompok6.tripie_admin.view.authentication.LoginActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class IntroActivity : AppCompatActivity() {
+class SplashScreenActivity : AppCompatActivity() {
     private lateinit var binding : ActivitySplashScreenBinding
     private lateinit var sharedPref: SharedPref
 

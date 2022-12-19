@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.core.content.ContentProviderCompat.requireContext
 import binar.academy.kelompok6.tripie_admin.R
 import binar.academy.kelompok6.tripie_admin.data.datastore.SharedPref
 import binar.academy.kelompok6.tripie_admin.data.network.ApiResponse
@@ -38,41 +39,45 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun login() {
-        authViewModel.login(LoginRequest(
-            email = binding.etEmailAdmin.text.toString(),
-            password = binding.etPassAdmin.text.toString()
-        ))
-        authViewModel.loginObserver().observe(this){
-            when(it){
-                is ApiResponse.Loading -> {
-                    showLoading()
-                    Log.d("Loading: ", it.toString())
-                }
-                is ApiResponse.Success -> {
-                    stopLoading()
-                    processLogin(it.data!!)
-                    Log.d("Success: ", it.toString())
-                }
-                is ApiResponse.Error -> {
-                    stopLoading()
-                    Toast.makeText(this, it.msg, Toast.LENGTH_SHORT).show()
-                    Log.d("Error: ", it.toString())
+        if (binding.etEmailAdmin.text.toString().isEmpty() || binding.etPassAdmin.text.toString().isEmpty()) {
+            Toast.makeText(this, "Data tidak boleh kosong", Toast.LENGTH_SHORT).show()
+        } else {
+            authViewModel.login(LoginRequest(
+                email = binding.etEmailAdmin.text.toString(),
+                password = binding.etPassAdmin.text.toString()
+            ))
+            authViewModel.loginObserver().observe(this){
+                when(it){
+                    is ApiResponse.Loading -> {
+                        showLoading()
+                        Log.d("Loading: ", it.toString())
+                    }
+                    is ApiResponse.Success -> {
+                        stopLoading()
+                        processLogin(it.data!!)
+                        Log.d("Success: ", it.toString())
+                    }
+                    is ApiResponse.Error -> {
+                        stopLoading()
+                        Toast.makeText(this, it.msg, Toast.LENGTH_SHORT).show()
+                        Log.d("Error: ", it.toString())
+                    }
                 }
             }
         }
     }
 
     private fun processLogin(data : LoginResponse) {
-        saveToken(data.token)
+        saveData(data.token, data.email)
         Toast.makeText(this, "Login Sukses!", Toast.LENGTH_SHORT).show()
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         finish()
     }
 
-    private fun saveToken(token : String) {
+    private fun saveData(token : String, email : String) {
         GlobalScope.launch {
-            sharedPref.saveToken(token)
+            sharedPref.saveData(token, email)
         }
     }
 

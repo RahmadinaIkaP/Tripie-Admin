@@ -3,14 +3,16 @@ package binar.academy.kelompok6.tripie_admin.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
+import androidx.lifecycle.asLiveData
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
+import androidx.navigation.ui.*
 import binar.academy.kelompok6.tripie_admin.R
 import binar.academy.kelompok6.tripie_admin.data.datastore.SharedPref
 import binar.academy.kelompok6.tripie_admin.databinding.ActivityMainBinding
@@ -38,17 +40,25 @@ class MainActivity : AppCompatActivity() {
         toolbar = findViewById(R.id.mainToolbar)
         setSupportActionBar(toolbar)
 
+        setDrawer()
+
+    }
+
+    private fun setDrawer(){
         navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         navController = navHostFragment.navController
 
         appBarConfiguration = AppBarConfiguration(setOf(
             R.id.dashboardFragment,
             R.id.flightFragment,
-            R.id.bookedTicketFragment
+            R.id.bookedTicketFragment,
+            R.id.logout
         ), binding.drawerAdmin)
 
         setupActionBarWithNavController(navController, binding.drawerAdmin)
         binding.navigationView.setupWithNavController(navController)
+
+        setHeaderText()
 
         binding.navigationView.setNavigationItemSelectedListener {
             when(it.itemId){
@@ -58,8 +68,24 @@ class MainActivity : AppCompatActivity() {
                     startActivity(intent)
                     finish()
                 }
+                else -> {
+                    NavigationUI.onNavDestinationSelected(it, navController)
+
+                    Handler(Looper.getMainLooper()).postDelayed({
+                        binding.drawerAdmin.closeDrawers()
+                    }, 1000)
+                }
             }
             true
+        }
+    }
+
+    private fun setHeaderText() {
+        val header = binding.navigationView.getHeaderView(0)
+        val tvHeaderEmail = header.findViewById(R.id.tvHeaderEmail) as TextView
+
+        sharedPref.getEmail.asLiveData().observe(this) { email ->
+            tvHeaderEmail.text = email
         }
     }
 

@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="scheduleDataEdit"
+            type="binar.academy.kelompok6.tripie_admin.model.response.Jadwal" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,50 +14,50 @@
         android:layout_height="match_parent"
         tools:context=".view.flightlist.EditFlightFragment">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/toolbarUbahJadwal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+<!--        <com.google.android.material.appbar.AppBarLayout-->
+<!--            android:id="@+id/toolbarUbahJadwal"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent">-->
 
-            <androidx.appcompat.widget.Toolbar
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/blue">
+<!--            <androidx.appcompat.widget.Toolbar-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@color/blue">-->
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp">
+<!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginEnd="16dp">-->
 
-                    <ImageView
-                        android:id="@+id/btnBackEdit"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/ic_arrow_left"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+<!--                    <ImageView-->
+<!--                        android:id="@+id/btnBackEdit"-->
+<!--                        android:layout_width="30dp"-->
+<!--                        android:layout_height="30dp"-->
+<!--                        android:src="@drawable/ic_arrow_left"-->
+<!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                        app:layout_constraintStart_toStartOf="parent"-->
+<!--                        app:layout_constraintTop_toTopOf="parent" />-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:text="Ubah Jadwal Penerbangan"
-                        android:textSize="16sp"
-                        android:textColor="@color/white"
-                        android:fontFamily="@font/poppins_semibold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/btnBackEdit"
-                        app:layout_constraintTop_toTopOf="parent" />
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="8dp"-->
+<!--                        android:text="Ubah Jadwal Penerbangan"-->
+<!--                        android:textSize="16sp"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:fontFamily="@font/poppins_semibold"-->
+<!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                        app:layout_constraintStart_toEndOf="@+id/btnBackEdit"-->
+<!--                        app:layout_constraintTop_toTopOf="parent" />-->
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+<!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
 
-            </androidx.appcompat.widget.Toolbar>
+<!--            </androidx.appcompat.widget.Toolbar>-->
 
-        </com.google.android.material.appbar.AppBarLayout>
+<!--        </com.google.android.material.appbar.AppBarLayout>-->
 
         <ScrollView
             android:layout_width="match_parent"
@@ -63,7 +65,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbarUbahJadwal">
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -88,7 +90,7 @@
                             android:id="@+id/etEditOriginDestination"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Lokasi Bandara Asal" />
+                            android:text='@{scheduleDataEdit.originAirport, default="Lokasi Bandara Asal"}' />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -116,7 +118,7 @@
                             android:id="@+id/etEditDestinationAirport"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Lokasi Bandara Tujuan" />
+                            android:text='@{scheduleDataEdit.destinationAirport, default="Lokasi Bandara Tujuan"}' />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -138,17 +140,17 @@
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
                         app:endIconDrawable="@drawable/ic_calendar"
                         app:endIconMode="custom"
-                        app:endIconTint="@color/blue"
-                        android:layout_marginTop="8dp">
+                        app:endIconTint="@color/blue">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etEditFlightDate"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Tanggal"
-                            android:inputType="date" />
+                            android:inputType="date"
+                            android:text='@{scheduleDataEdit.flightDate, default="Tanggal Penerbangan"}' />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -162,7 +164,7 @@
                             android:id="@+id/etEditFlightClass"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Kelas Pesawat" />
+                            android:text='@{scheduleDataEdit.planeClass, default="Kelas Pesawat"}' />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -176,7 +178,7 @@
                             android:id="@+id/etEditDepartureTime"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Jam Keberangkatan" />
+                            android:text='@{scheduleDataEdit.departureHour, default="Jam Keberangkatan"}' />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -190,7 +192,7 @@
                             android:id="@+id/etEditArriveTime"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Jam Tiba" />
+                            android:text='@{scheduleDataEdit.arrivalHour, default="Jam Tiba"}' />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -204,8 +206,8 @@
                             android:id="@+id/etEditFlightPrice"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Harga (IDR)"
-                            android:inputType="number" />
+                            android:inputType="number"
+                            android:text='@{String.valueOf(scheduleDataEdit.price), default="Harga (IDR)"}' />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -215,9 +217,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:orientation="horizontal"
-                    android:weightSum="2"
                     android:paddingStart="16dp"
                     android:paddingEnd="16dp"
+                    android:paddingBottom="16dp"
+                    android:weightSum="2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
@@ -226,13 +229,13 @@
                         android:id="@+id/btnUpdateFlight"
                         android:layout_width="wrap_content"
                         android:layout_height="55dp"
-                        android:layout_weight="1"
                         android:layout_marginEnd="16dp"
+                        android:layout_weight="1"
                         android:backgroundTint="@android:color/holo_orange_light"
                         android:text="@string/update"
                         android:textColor="@color/soft_black"
                         app:icon="@drawable/ic_edit"
-                        app:iconTint="@color/soft_black"/>
+                        app:iconTint="@color/soft_black" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnDeleteFlight"
@@ -243,7 +246,7 @@
                         android:text="@string/delete"
                         android:textColor="@color/white"
                         android:textSize="16sp"
-                        app:icon="@drawable/ic_trash"/>
+                        app:icon="@drawable/ic_trash" />
 
 
                 </LinearLayout>
