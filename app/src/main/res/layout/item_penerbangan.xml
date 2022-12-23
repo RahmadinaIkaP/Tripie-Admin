@@ -42,8 +42,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
+                    android:maxWidth="140dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Kode 1"
+                    android:text='@{scheduleData.originAirport, default="Kode 1"}'
                     android:textColor="@color/soft_black"
                     android:textSize="16sp" />
 
@@ -58,8 +59,9 @@
                     android:id="@+id/tvAirporArrive"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:maxWidth="140dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Kode 2"
+                    android:text='@{scheduleData.destinationAirport, default="Kode 2"}'
                     android:textColor="@color/soft_black"
                     android:textSize="16sp" />
 
@@ -88,7 +90,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:text='@{scheduleData.flightDate, default="Tanggal Penerbangan"}'
+                    android:text="Tanggal Penerbangan"
                     android:textColor="@color/gray"
                     android:textSize="12sp"
                     android:fontFamily="@font/poppins"/>

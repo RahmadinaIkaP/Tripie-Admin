@@ -36,16 +36,16 @@ class AuthViewModel @Inject constructor(private val api : ApiEndpoint) : ViewMod
                         // untuk menampung response code
                         val data = response.body()
 
-                        // checking null in var data
+                        // checking null in var dataHistory
                         data?.let {
-                            loginLiveData.postValue(ApiResponse.Success(it)) // post data response ke sealed class success
+                            loginLiveData.postValue(ApiResponse.Success(it)) // post dataHistory response ke sealed class success
                             Log.d("Success: ", ApiResponse.Success(it).toString())
                         }
                     }else{
                         try {
                             response.errorBody()?.let {
                                 val jsonObject = JSONObject(it.string()).getString("message") // get message response from JSON format
-                                loginLiveData.postValue(ApiResponse.Error(jsonObject)) // post data response ke sealed class error
+                                loginLiveData.postValue(ApiResponse.Error(jsonObject)) // post dataHistory response ke sealed class error
                                 Log.d("Error: ", ApiResponse.Error(jsonObject).toString())
                             }
                         } catch (e: Exception) {

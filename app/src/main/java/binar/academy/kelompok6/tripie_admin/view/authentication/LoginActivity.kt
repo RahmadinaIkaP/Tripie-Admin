@@ -40,7 +40,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun login() {
         if (binding.etEmailAdmin.text.toString().isEmpty() || binding.etPassAdmin.text.toString().isEmpty()) {
-            Toast.makeText(this, "Data tidak boleh kosong", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "DataHistory tidak boleh kosong", Toast.LENGTH_SHORT).show()
         } else {
             authViewModel.login(LoginRequest(
                 email = binding.etEmailAdmin.text.toString(),

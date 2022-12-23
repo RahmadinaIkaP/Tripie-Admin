@@ -272,35 +272,35 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraintLayout11"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout9">
+<!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                    android:id="@+id/constraintLayout11"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout9">-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:text="Pembayaran:"
-                        android:textColor="@color/gray"
-                        android:textSize="16sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:fontFamily="@font/poppins_semibold"-->
+<!--                        android:text="Pembayaran:"-->
+<!--                        android:textColor="@color/gray"-->
+<!--                        android:textSize="16sp"-->
+<!--                        app:layout_constraintStart_toStartOf="parent"-->
+<!--                        app:layout_constraintTop_toTopOf="parent" />-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:text="BCA"
-                        android:textColor="@color/soft_black"
-                        android:textSize="16sp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:fontFamily="@font/poppins_semibold"-->
+<!--                        android:text="BCA"-->
+<!--                        android:textColor="@color/soft_black"-->
+<!--                        android:textSize="16sp"-->
+<!--                        app:layout_constraintEnd_toEndOf="parent"-->
+<!--                        app:layout_constraintTop_toTopOf="parent" />-->
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+<!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
 
                 <LinearLayout
                     android:id="@+id/linearLayout9"
@@ -310,7 +310,7 @@
                     android:gravity="center"
                     android:orientation="vertical"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout11">
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout9">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -340,7 +340,7 @@
                     android:orientation="vertical"
                     app:layout_constraintEnd_toStartOf="@+id/linearLayout11"
                     app:layout_constraintStart_toEndOf="@+id/linearLayout9"
-                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout11">
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout9">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -369,7 +369,7 @@
                     android:gravity="center"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout11">
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout9">
 
                     <TextView
                         android:layout_width="wrap_content"

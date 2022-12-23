@@ -50,6 +50,12 @@
             app:destination="@id/flightFragment"
             app:popUpTo="@id/editFlightFragment"
             app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_editFlightFragment_to_listAirportDestinationFragment"
+            app:destination="@id/listAirportDestinationFragment" />
+        <action
+            android:id="@+id/action_editFlightFragment_to_listAirportOriginFragment"
+            app:destination="@id/listAirportOriginFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailTicketBookedFragment"
@@ -60,7 +66,19 @@
         android:id="@+id/addFlightFragment"
         android:name="binar.academy.kelompok6.tripie_admin.view.flightlist.AddFlightFragment"
         android:label="fragment_add_flight"
-        tools:layout="@layout/fragment_add_flight" />
+        tools:layout="@layout/fragment_add_flight" >
+        <action
+            android:id="@+id/action_addFlightFragment_to_flightFragment"
+            app:destination="@id/flightFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/addFlightFragment"/>
+        <action
+            android:id="@+id/action_addFlightFragment_to_listAirportDestinationFragment"
+            app:destination="@id/listAirportDestinationFragment" />
+        <action
+            android:id="@+id/action_addFlightFragment_to_listAirportOriginFragment"
+            app:destination="@id/listAirportOriginFragment" />
+    </fragment>
     <dialog
         android:id="@+id/flightFilterListDialog"
         android:name="binar.academy.kelompok6.tripie_admin.view.flightlist.bottomsheetdialog.FlightFilterListDialog"
@@ -71,4 +89,14 @@
         android:name="binar.academy.kelompok6.tripie_admin.view.flightlist.bottomsheetdialog.SortingFlightDialog"
         android:label="dialog_sorting_price"
         tools:layout="@layout/dialog_sorting_flight" />
+    <fragment
+        android:id="@+id/listAirportOriginFragment"
+        android:name="binar.academy.kelompok6.tripie_admin.view.flightlist.ListAirportOriginFragment"
+        android:label="fragment_list_airport_origin"
+        tools:layout="@layout/fragment_list_airport_origin" />
+    <fragment
+        android:id="@+id/listAirportDestinationFragment"
+        android:name="binar.academy.kelompok6.tripie_admin.view.flightlist.ListAirportDestinationFragment"
+        android:label="fragment_list_airport_destination"
+        tools:layout="@layout/fragment_list_airport_destination" />
 </navigation>

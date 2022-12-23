@@ -6,51 +6,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.flightlist.AddFlightFragment">
 
-<!--    <com.google.android.material.appbar.AppBarLayout-->
-<!--        android:id="@+id/appBarLayout"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent">-->
-
-<!--        <androidx.appcompat.widget.Toolbar-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:background="@color/blue">-->
-
-<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginEnd="16dp">-->
-
-<!--                <ImageView-->
-<!--                    android:id="@+id/btnBackAdd"-->
-<!--                    android:layout_width="30dp"-->
-<!--                    android:layout_height="30dp"-->
-<!--                    android:src="@drawable/ic_arrow_left"-->
-<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginStart="8dp"-->
-<!--                    android:fontFamily="@font/poppins_semibold"-->
-<!--                    android:text="Tambah Jadwal Penerbangan"-->
-<!--                    android:textColor="@color/white"-->
-<!--                    android:textSize="16sp"-->
-<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                    app:layout_constraintStart_toEndOf="@+id/btnBackAdd"-->
-<!--                    app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-<!--        </androidx.appcompat.widget.Toolbar>-->
-
-<!--    </com.google.android.material.appbar.AppBarLayout>-->
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -61,7 +16,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp">
 
             <LinearLayout
                 android:id="@+id/linearLayout3"
@@ -82,7 +38,9 @@
                         android:id="@+id/etOriginDestination"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Lokasi Bandara Asal" />
+                        android:hint="Nama Bandara Asal"
+                       android:focusable="false"
+                        />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -110,7 +68,8 @@
                         android:id="@+id/etDestinationAirport"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Lokasi Bandara Tujuan" />
+                        android:hint="Nama Bandara Tujuan"
+                        android:focusable="false"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -170,7 +129,8 @@
                         android:id="@+id/etDepartureTime"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Jam Keberangkatan" />
+                        android:hint="Jam Keberangkatan"
+                        android:inputType="time"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -184,7 +144,8 @@
                         android:id="@+id/etArriveTime"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Jam Tiba" />
+                        android:hint="Jam Tiba"
+                        android:inputType="time"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -203,6 +164,19 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etAirplaneName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Nama Pesawat" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
 

@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import binar.academy.kelompok6.tripie_admin.databinding.ItemPenerbanganBinding
 import binar.academy.kelompok6.tripie_admin.model.response.Jadwal
+import java.text.SimpleDateFormat
+import java.util.*
 
 class FlightAdapter (private val onClick : FlightInterface) : RecyclerView.Adapter<FlightAdapter.ViewHolder>() {
 
@@ -27,6 +29,12 @@ class FlightAdapter (private val onClick : FlightInterface) : RecyclerView.Adapt
         RecyclerView.ViewHolder(binding.root){
             fun bind(jadwal: Jadwal){
                 binding.scheduleData = jadwal
+
+                val dateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.getDefault())
+                val flightDate = SimpleDateFormat("d MMMM y",
+                    Locale.getDefault()).format(dateFormat.parse(jadwal.flightDate)!!)
+
+                binding.tvFlightDate.text = flightDate
 
                 itemView.setOnClickListener {
                     onClick.onItemClick(jadwal)

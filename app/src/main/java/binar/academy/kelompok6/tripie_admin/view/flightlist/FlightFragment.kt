@@ -46,6 +46,10 @@ class FlightFragment : Fragment(), FlightAdapter.FlightInterface {
 
         sharedPref = SharedPref(requireContext())
 
+        binding.btnAddFlightSchedule.setOnClickListener {
+            findNavController().navigate(R.id.action_flightFragment_to_addFlightFragment)
+        }
+
         setFlightRvData()
     }
 
@@ -61,7 +65,10 @@ class FlightFragment : Fragment(), FlightAdapter.FlightInterface {
                     }
                     is ApiResponse.Success -> {
                         stopLoading()
-                        response.data?.let { showRvData(it.dataGetSchedule.jadwal) }
+                        response.data?.let {
+                            val sortedSchedule = it.dataGetSchedule.jadwal.sortedByDescending { data -> data.id }
+                            showRvData(sortedSchedule)
+                        }
                         Log.d("Success: ", response.toString())
                     }
                     is ApiResponse.Error -> {
