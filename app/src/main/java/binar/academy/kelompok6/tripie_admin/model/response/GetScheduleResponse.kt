@@ -7,5 +7,5 @@ data class GetScheduleResponse(
     @SerializedName("status")
     val status: String,
     @SerializedName("data")
-    val dataGetSchedule : DataGetSchedule
+    val data: DataGetSchedule
 )

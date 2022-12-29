@@ -42,8 +42,13 @@ interface ApiEndpoint {
     ) : Call<DeleteResponse>
 
     @GET("history")
-    fun getHistoryBooking() : Call<HistoryResponse>
+    fun getHistoryBooking() : Call<GetHistoryResponse>
 
     @GET("get-airport")
     fun getAirport() : Call<AirportResponse>
+
+    @GET("user")
+    fun getUser(
+        @Header("Authorization") token: String
+    ) : Call<GetUserResponse>
 }

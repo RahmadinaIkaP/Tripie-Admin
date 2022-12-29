@@ -28,16 +28,31 @@ class FlightAdapter (private val onClick : FlightInterface) : RecyclerView.Adapt
     inner class ViewHolder(private val binding: ItemPenerbanganBinding) :
         RecyclerView.ViewHolder(binding.root){
             fun bind(jadwal: Jadwal){
-                binding.scheduleData = jadwal
+                binding.apply {
+                    scheduleData = jadwal
 
-                val dateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.getDefault())
-                val flightDate = SimpleDateFormat("d MMMM y",
-                    Locale.getDefault()).format(dateFormat.parse(jadwal.flightDate)!!)
+                    val dateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.getDefault())
+                    val flightDate = SimpleDateFormat("d MMMM y",
+                        Locale.getDefault()).format(dateFormat.parse(jadwal.flightDate)!!)
 
-                binding.tvFlightDate.text = flightDate
+                    val timeFormat = SimpleDateFormat("HH:mm:ss", Locale.getDefault())
+                    val convertedDepartHour = timeFormat.parse(jadwal.departureHour)?.let {
+                        SimpleDateFormat("HH:mm",
+                            Locale.getDefault()).format(it)
+                    }
 
-                itemView.setOnClickListener {
-                    onClick.onItemClick(jadwal)
+                    val convertedArriveHour = timeFormat.parse(jadwal.arrivalHour)?.let {
+                        SimpleDateFormat("HH:mm",
+                            Locale.getDefault()).format(it)
+                    }
+
+                    tvDeparture.text = convertedDepartHour
+                    tvArrive.text = convertedArriveHour
+                    tvFlightDate.text = flightDate
+
+                    itemView.setOnClickListener {
+                        onClick.onItemClick(jadwal)
+                    }
                 }
             }
     }

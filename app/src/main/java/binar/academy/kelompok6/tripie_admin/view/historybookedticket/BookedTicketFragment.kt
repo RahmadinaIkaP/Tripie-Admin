@@ -1,6 +1,5 @@
-package binar.academy.kelompok6.tripie_admin.view.bookedticketlist
+package binar.academy.kelompok6.tripie_admin.view.historybookedticket
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -9,17 +8,20 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import binar.academy.kelompok6.tripie_admin.R
 import binar.academy.kelompok6.tripie_admin.data.datastore.SharedPref
 import binar.academy.kelompok6.tripie_admin.data.network.ApiResponse
 import binar.academy.kelompok6.tripie_admin.databinding.FragmentBookedTicketBinding
+import binar.academy.kelompok6.tripie_admin.model.response.Booking
 import binar.academy.kelompok6.tripie_admin.view.MainActivity
-import binar.academy.kelompok6.tripie_admin.view.authentication.LoginActivity
-import binar.academy.kelompok6.tripie_admin.view.bookedticketlist.adapter.BookedTicketAdapter
-import binar.academy.kelompok6.tripie_admin.view.bookedticketlist.viewmodel.HistoryBookingViewModel
+import binar.academy.kelompok6.tripie_admin.view.historybookedticket.adapter.BookedTicketAdapter
+import binar.academy.kelompok6.tripie_admin.view.historybookedticket.viewmodel.HistoryBookingViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class BookedTicketFragment : Fragment() {
+class BookedTicketFragment : Fragment(), BookedTicketAdapter.BookedTicketInterface {
     private var _binding : FragmentBookedTicketBinding? = null
     private val binding get() = _binding!!
     private lateinit var sharedPref: SharedPref
@@ -37,7 +39,7 @@ class BookedTicketFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        (activity as MainActivity).supportActionBar?.title = "Daftar Pesanan"
+        (activity as MainActivity).supportActionBar?.title = "Daftar Booking Tiket"
 
         sharedPref = SharedPref(requireContext())
 
@@ -55,6 +57,9 @@ class BookedTicketFragment : Fragment() {
                 }
                 is ApiResponse.Success -> {
                     stopLoading()
+                    response.data?.let {
+                        setDataRv(response.data.data.booking)
+                    }
                     Log.d("Success: ", response.toString())
                 }
                 is ApiResponse.Error -> {
@@ -64,6 +69,16 @@ class BookedTicketFragment : Fragment() {
 
                 }
             }
+        }
+    }
+
+    private fun setDataRv(booking: List<Booking>) {
+        adapter = BookedTicketAdapter(this)
+        adapter.setData(booking)
+
+        binding.apply {
+            rvHistoryBookedTicket.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+            rvHistoryBookedTicket.adapter = adapter
         }
     }
 
@@ -78,5 +93,10 @@ class BookedTicketFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onItemClick(booking: Booking) {
+        val action = BookedTicketFragmentDirections.actionBookedTicketFragmentToDetailTicketBookedFragment(booking)
+        findNavController().navigate(action)
     }
 }

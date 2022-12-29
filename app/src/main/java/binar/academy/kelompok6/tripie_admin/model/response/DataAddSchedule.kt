@@ -4,26 +4,36 @@ package binar.academy.kelompok6.tripie_admin.model.response
 import com.google.gson.annotations.SerializedName
 
 data class DataAddSchedule(
-    @SerializedName("Airline_Name")
-    val airlineName: String,
-    @SerializedName("Arrival_Hour")
-    val arrivalHour: String,
-    @SerializedName("createdAt")
-    val createdAt: String,
-    @SerializedName("Departure_Hour")
-    val departureHour: String,
-    @SerializedName("Destination_Airport")
-    val destinationAirport: String,
-    @SerializedName("flight_Date")
-    val flightDate: String,
     @SerializedName("id")
     val id: Int,
-    @SerializedName("Origin_Airport")
-    val originAirport: String,
-    @SerializedName("Plane_class")
+    @SerializedName("origin_code")
+    val originCode: String,
+    @SerializedName("origin_name")
+    val originName: String,
+    @SerializedName("origin_city")
+    val originCity: String,
+    @SerializedName("destination_code")
+    val destinationCode: String,
+    @SerializedName("destination_name")
+    val destinationName: String,
+    @SerializedName("destination_city")
+    val destinationCity: String,
+    @SerializedName("plane_class")
     val planeClass: String,
-    @SerializedName("Price")
+    @SerializedName("flight_date")
+    val flightDate: String,
+    @SerializedName("airline_name")
+    val airlineName: String,
+    @SerializedName("departure_hour")
+    val departureHour: String,
+    @SerializedName("arrival_hour")
+    val arrivalHour: String,
+    @SerializedName("price")
     val price: Int,
+    @SerializedName("capacity")
+    val capacity: Int,
     @SerializedName("updatedAt")
-    val updatedAt: String
+    val updatedAt: String,
+    @SerializedName("createdAt")
+    val createdAt: String
 )

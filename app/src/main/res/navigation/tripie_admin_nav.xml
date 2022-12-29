@@ -29,7 +29,7 @@
     </fragment>
     <fragment
         android:id="@+id/bookedTicketFragment"
-        android:name="binar.academy.kelompok6.tripie_admin.view.bookedticketlist.BookedTicketFragment"
+        android:name="binar.academy.kelompok6.tripie_admin.view.historybookedticket.BookedTicketFragment"
         android:label="fragment_booked_ticket"
         tools:layout="@layout/fragment_booked_ticket" >
         <action
@@ -56,12 +56,21 @@
         <action
             android:id="@+id/action_editFlightFragment_to_listAirportOriginFragment"
             app:destination="@id/listAirportOriginFragment" />
+        <action
+            android:id="@+id/action_editFlightFragment_to_listPlaneClassFragment"
+            app:destination="@id/listPlaneClassFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailTicketBookedFragment"
-        android:name="binar.academy.kelompok6.tripie_admin.view.bookedticketlist.DetailTicketBookedFragment"
+        android:name="binar.academy.kelompok6.tripie_admin.view.historybookedticket.DetailTicketBookedFragment"
         android:label="fragment_detail_ticket_booked"
-        tools:layout="@layout/fragment_detail_ticket_booked" />
+        tools:layout="@layout/fragment_detail_ticket_booked" >
+        <argument
+            android:name="dataTiketBook"
+            app:argType="binar.academy.kelompok6.tripie_admin.model.response.Booking"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
     <fragment
         android:id="@+id/addFlightFragment"
         android:name="binar.academy.kelompok6.tripie_admin.view.flightlist.AddFlightFragment"
@@ -78,13 +87,16 @@
         <action
             android:id="@+id/action_addFlightFragment_to_listAirportOriginFragment"
             app:destination="@id/listAirportOriginFragment" />
+        <action
+            android:id="@+id/action_addFlightFragment_to_listPlaneClassFragment"
+            app:destination="@id/listPlaneClassFragment" />
     </fragment>
     <dialog
         android:id="@+id/flightFilterListDialog"
         android:name="binar.academy.kelompok6.tripie_admin.view.flightlist.bottomsheetdialog.FlightFilterListDialog"
         android:label="dialog_flight_filter"
         tools:layout="@layout/dialog_flight_filter" />
-    <fragment
+    <dialog
         android:id="@+id/sortingPriceDialog"
         android:name="binar.academy.kelompok6.tripie_admin.view.flightlist.bottomsheetdialog.SortingFlightDialog"
         android:label="dialog_sorting_price"
@@ -99,4 +111,9 @@
         android:name="binar.academy.kelompok6.tripie_admin.view.flightlist.ListAirportDestinationFragment"
         android:label="fragment_list_airport_destination"
         tools:layout="@layout/fragment_list_airport_destination" />
+    <fragment
+        android:id="@+id/listPlaneClassFragment"
+        android:name="binar.academy.kelompok6.tripie_admin.view.flightlist.ListPlaneClassFragment"
+        android:label="fragment_list_plane_class"
+        tools:layout="@layout/fragment_list_plane_class" />
 </navigation>

@@ -31,7 +31,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
         sharedPref.getToken.asLiveData().observe(this){
             Handler(Looper.getMainLooper()).postDelayed({
-                if (it == "Undefined"){
+                if (it == ""){
                     val intent = Intent(this, LoginActivity::class.java)
                     startActivity(intent)
                     finish()

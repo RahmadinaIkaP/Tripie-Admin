@@ -1,5 +1,6 @@
 package binar.academy.kelompok6.tripie_admin.view.flightlist
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -16,8 +17,9 @@ import binar.academy.kelompok6.tripie_admin.data.datastore.SharedPref
 import binar.academy.kelompok6.tripie_admin.data.network.ApiResponse
 import binar.academy.kelompok6.tripie_admin.databinding.FragmentEditFlightBinding
 import binar.academy.kelompok6.tripie_admin.model.request.AddEditScheduleRequest
-import binar.academy.kelompok6.tripie_admin.model.response.Airport
 import binar.academy.kelompok6.tripie_admin.view.MainActivity
+import binar.academy.kelompok6.tripie_admin.view.authentication.LoginActivity
+import binar.academy.kelompok6.tripie_admin.view.dashboard.viewmodel.DashboardViewModel
 import binar.academy.kelompok6.tripie_admin.view.flightlist.viewmodel.FlightScheduleViewModel
 import com.google.android.material.datepicker.MaterialDatePicker
 import dagger.hilt.android.AndroidEntryPoint
@@ -30,6 +32,7 @@ class EditFlightFragment : Fragment() {
     private val binding get() = _binding!!
     private val args : EditFlightFragmentArgs by navArgs()
     private val flightScheduleViewModel : FlightScheduleViewModel by viewModels()
+    private val airportViewModel : DashboardViewModel by viewModels()
     private lateinit var sharedPref: SharedPref
 
     override fun onCreateView(
@@ -56,26 +59,41 @@ class EditFlightFragment : Fragment() {
             }
 
             etEditOriginDestination.setOnClickListener {
-                findNavController().navigate(R.id.action_addFlightFragment_to_listAirportOriginFragment)
+                findNavController().navigate(R.id.action_editFlightFragment_to_listAirportOriginFragment)
             }
 
+            getNameOriginAirport()
+
             etEditDestinationAirport.setOnClickListener {
-                findNavController().navigate(R.id.action_addFlightFragment_to_listAirportDestinationFragment)
+                findNavController().navigate(R.id.action_editFlightFragment_to_listAirportDestinationFragment)
             }
+
+            getNameDestinationAirport()
+
+            etEditFlightClass.setOnClickListener {
+                findNavController().navigate(R.id.action_editFlightFragment_to_listPlaneClassFragment)
+            }
+
+            getPlaneClass()
 
             btnUpdateFlight.setOnClickListener {
                 sharedPref.getToken.asLiveData().observe(requireActivity()){ token ->
                     dataFlightSchedule?.let { data -> editFlightSchedule(token, data.id,
                         AddEditScheduleRequest(
-                            data.airlineName,
-                            data.arrivalHour,
-                            data.departureHour,
-                            data.destinationAirport,
-                            data.flightDate,
-                            data.originAirport,
-                            data.planeClass,
-                            data.price
-                        )) }
+                            etEditOgDestinationCode.text.toString(),
+                            etEditOriginDestination.text.toString(),
+                            etEditOriginDestinationCity.text.toString(),
+                            etEditDestinationAirportCode.text.toString(),
+                            etEditDestinationAirport.text.toString(),
+                            etEditDestinationAirportCity.text.toString(),
+                            etEditFlightClass.text.toString().lowercase(),
+                            etEditFlightDate.text.toString(),
+                            etEditAirplaneName.text.toString(),
+                            etEditDepartureTime.text.toString(),
+                            etEditArriveTime.text.toString(),
+                            etEditFlightPrice.text.toString().toInt()
+                        )
+                    ) }
                 }
             }
 
@@ -93,25 +111,83 @@ class EditFlightFragment : Fragment() {
 
         datePicker.show(parentFragmentManager, "datePicker")
         datePicker.addOnPositiveButtonClickListener {
-            val dateFormat = SimpleDateFormat("MM-dd-yyyy'T'HH:mm:ss.SSS'Z'", Locale.getDefault())
+            val dateFormat = SimpleDateFormat("MM-dd-yyyy", Locale.getDefault())
 
             binding.etEditFlightDate.setText(dateFormat.format(Date(it)))
         }
     }
 
     private fun getNameOriginAirport(){
-        findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData<Airport>(
+        findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData<String>(
             "namaAirportOrigin"
-        )?.observe(viewLifecycleOwner) {
-            binding.etEditOriginDestination.setText(it.airportName)
+        )?.observe(viewLifecycleOwner) { name ->
+            airportViewModel.getAllAirport()
+            airportViewModel.getAllAirportObserver().observe(viewLifecycleOwner){ response->
+                when(response){
+                    is ApiResponse.Loading -> {
+                        Log.d("Loading: ", response.toString())
+                    }
+                    is ApiResponse.Success -> {
+                        response.data?.let {
+                            val sortedAirport = it.data.sortedBy { data -> data.airportName == name }
+                            sortedAirport.forEach { airport ->
+                                binding.apply {
+                                    etEditOriginDestination.setText(airport.airportName)
+                                    etEditOgDestinationCode.setText(airport.airportCode)
+                                    etEditOriginDestinationCity.setText(airport.city)
+                                }
+                            }
+                        }
+                        Log.d("Success: ", response.toString())
+                    }
+                    is ApiResponse.Error -> {
+                        Toast.makeText(requireContext(), response.msg, Toast.LENGTH_SHORT).show()
+                        Log.d("Error: ", response.toString())
+                    }
+                }
+            }
         }
     }
 
     private fun getNameDestinationAirport(){
-        findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData<Airport>(
+        findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData<String>(
             "namaAirportDestination"
-        )?.observe(viewLifecycleOwner) {
-            binding.etEditDestinationAirport.setText(it.airportName)
+        )?.observe(viewLifecycleOwner) { name ->
+            airportViewModel.getAllAirport()
+            airportViewModel.getAllAirportObserver().observe(viewLifecycleOwner){ response ->
+                when(response){
+                    is ApiResponse.Loading -> {
+                        Log.d("Loading: ", response.toString())
+                    }
+                    is ApiResponse.Success -> {
+                        response.data?.let {
+                            val sortedAirport = it.data.filter { data -> data.airportName == name }
+                            sortedAirport.forEach { airport ->
+                                binding.apply {
+                                    etEditDestinationAirport.setText(airport.airportName)
+                                    etEditDestinationAirportCode.setText(airport.airportCode)
+                                    etEditDestinationAirportCity.setText(airport.city)
+                                }
+                            }
+
+                        }
+                        Log.d("Success: ", response.toString())
+                    }
+                    is ApiResponse.Error -> {
+                        Toast.makeText(requireContext(), response.msg, Toast.LENGTH_SHORT).show()
+                        Log.d("Error: ", response.toString())
+
+                    }
+                }
+            }
+        }
+    }
+
+    private fun getPlaneClass() {
+        findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData<String>(
+            "planeClassName"
+        )?.observe(viewLifecycleOwner){
+            binding.etEditFlightClass.setText(it)
         }
     }
 
@@ -152,6 +228,12 @@ class EditFlightFragment : Fragment() {
                 is ApiResponse.Error -> {
                     Log.d("Error: ", response.toString())
                     Toast.makeText(requireContext(), response.msg, Toast.LENGTH_SHORT).show()
+
+                    if (response.msg == "Unauthorized"){
+                        val intent = Intent(requireActivity(), LoginActivity::class.java)
+                        startActivity(intent)
+                        requireActivity().finish()
+                    }
                 }
             }
         }

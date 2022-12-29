@@ -44,7 +44,7 @@
                     android:layout_marginStart="8dp"
                     android:maxWidth="140dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text='@{scheduleData.originAirport, default="Kode 1"}'
+                    android:text='@{scheduleData.originCode, default="Kode 1"}'
                     android:textColor="@color/soft_black"
                     android:textSize="16sp" />
 
@@ -61,7 +61,7 @@
                     android:layout_height="wrap_content"
                     android:maxWidth="140dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text='@{scheduleData.destinationAirport, default="Kode 2"}'
+                    android:text='@{scheduleData.destinationCode, default="Kode 2"}'
                     android:textColor="@color/soft_black"
                     android:textSize="16sp" />
 
@@ -162,7 +162,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
-                    android:text='@{scheduleData.departureHour, default="Jam Berangkat"}'
+                    android:text="Jam Berangkat"
                     android:textColor="@color/soft_black"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -194,7 +194,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
-                    android:text='@{scheduleData.arrivalHour, default="Jam Tiba"}'
+                    android:text="Jam Tiba"
                     android:textColor="@color/soft_black"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -203,6 +203,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"

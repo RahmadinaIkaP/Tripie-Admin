@@ -1,6 +1,5 @@
 package binar.academy.kelompok6.tripie_admin.view.flightlist
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -15,7 +14,6 @@ import binar.academy.kelompok6.tripie_admin.data.network.ApiResponse
 import binar.academy.kelompok6.tripie_admin.databinding.FragmentListAirportOriginBinding
 import binar.academy.kelompok6.tripie_admin.model.response.Airport
 import binar.academy.kelompok6.tripie_admin.view.MainActivity
-import binar.academy.kelompok6.tripie_admin.view.authentication.LoginActivity
 import binar.academy.kelompok6.tripie_admin.view.dashboard.viewmodel.DashboardViewModel
 import binar.academy.kelompok6.tripie_admin.view.flightlist.adapter.AirportAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -54,7 +52,7 @@ class ListAirportOriginFragment : Fragment(), AirportAdapter.AirportInterface {
                 is ApiResponse.Success -> {
                     stopLoading()
                     response.data?.let {
-                        val sortedAirport = it.dataAirport.airport.sortedBy { data -> data.id }
+                        val sortedAirport = it.data.sortedBy { data -> data.id }
                         showRvDataAirport(sortedAirport)
                     }
                     Log.d("Success: ", response.toString())

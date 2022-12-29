@@ -46,11 +46,22 @@ class FlightFragment : Fragment(), FlightAdapter.FlightInterface {
 
         sharedPref = SharedPref(requireContext())
 
-        binding.btnAddFlightSchedule.setOnClickListener {
-            findNavController().navigate(R.id.action_flightFragment_to_addFlightFragment)
+        binding.apply {
+            btnAddFlightSchedule.setOnClickListener {
+                findNavController().navigate(R.id.action_flightFragment_to_addFlightFragment)
+            }
+
+            btnFilter.setOnClickListener {
+                findNavController().navigate(R.id.action_flightFragment_to_flightFilterListDialog)
+            }
+
+            btnSortPrice.setOnClickListener {
+                findNavController().navigate(R.id.action_flightFragment_to_sortingPriceDialog)
+            }
         }
 
         setFlightRvData()
+        getPlaneClassFilter()
     }
 
     private fun setFlightRvData() {
@@ -66,7 +77,7 @@ class FlightFragment : Fragment(), FlightAdapter.FlightInterface {
                     is ApiResponse.Success -> {
                         stopLoading()
                         response.data?.let {
-                            val sortedSchedule = it.dataGetSchedule.jadwal.sortedByDescending { data -> data.id }
+                            val sortedSchedule = it.data.jadwal.sortedByDescending { data -> data.id }
                             showRvData(sortedSchedule)
                         }
                         Log.d("Success: ", response.toString())
@@ -94,6 +105,63 @@ class FlightFragment : Fragment(), FlightAdapter.FlightInterface {
         binding.apply {
             rvFlightSchedule.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
             rvFlightSchedule.adapter = adapter
+        }
+    }
+
+    private fun getPlaneClassFilter(){
+        findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData<String>(
+            "planeFilter"
+        )?.observe(viewLifecycleOwner){ pclass ->
+            sharedPref.getToken.asLiveData().observe(viewLifecycleOwner){ token ->
+                flightScheduleViewModel.getAllFlightSchedule(token)
+
+                flightScheduleViewModel.getAllScheduleObserver().observe(viewLifecycleOwner){ response ->
+                    when(response){
+                        is ApiResponse.Loading -> {
+                            showLoading()
+                            Log.d("Loading: ", response.toString())
+                        }
+                        is ApiResponse.Success -> {
+                            stopLoading()
+                            response.data?.let {
+                                checkingFilter(pclass, it.data.jadwal)
+                            }
+                            Log.d("Success: ", response.toString())
+                        }
+                        is ApiResponse.Error -> {
+                            stopLoading()
+                            Toast.makeText(requireContext(), response.msg, Toast.LENGTH_SHORT).show()
+                            Log.d("Error: ", response.toString())
+
+                            if (response.msg == "Unauthorized"){
+                                val intent = Intent(requireActivity(), LoginActivity::class.java)
+                                startActivity(intent)
+                                requireActivity().finish()
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private fun checkingFilter(pclass: String?, jadwal: List<Jadwal>) {
+        when{
+            pclass.equals("economy") -> {
+                val resultEco = jadwal.filter { it.planeClass.lowercase() == "economy" }
+                showRvData(resultEco)
+            }
+            pclass.equals("business") -> {
+                val resultBusiness = jadwal.filter { it.planeClass.lowercase() == "business" }
+                showRvData(resultBusiness)
+            }
+            pclass.equals("first class") -> {
+                val resultFc = jadwal.filter { it.planeClass.lowercase() == "first class" }
+                showRvData(resultFc)
+            }
+            else -> {
+                showRvData(jadwal)
+            }
         }
     }
 

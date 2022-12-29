@@ -83,9 +83,14 @@ class MainActivity : AppCompatActivity() {
     private fun setHeaderText() {
         val header = binding.navigationView.getHeaderView(0)
         val tvHeaderEmail = header.findViewById(R.id.tvHeaderEmail) as TextView
+        val tvHeaderName = header.findViewById(R.id.tvHeaderName) as TextView
 
         sharedPref.getEmail.asLiveData().observe(this) { email ->
             tvHeaderEmail.text = email
+        }
+
+        sharedPref.getName.asLiveData().observe(this){ name ->
+            tvHeaderName.text = name
         }
     }
 

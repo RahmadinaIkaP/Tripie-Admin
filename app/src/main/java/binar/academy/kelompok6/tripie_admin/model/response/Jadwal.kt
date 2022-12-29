@@ -9,21 +9,29 @@ import kotlinx.parcelize.Parcelize
 data class Jadwal(
     @SerializedName("id")
     val id: Int,
-    @SerializedName("Origin_Airport")
-    val originAirport: String,
-    @SerializedName("Destination_Airport")
-    val destinationAirport: String,
-    @SerializedName("Arrival_Hour")
-    val arrivalHour: String,
-    @SerializedName("Departure_Hour")
-    val departureHour: String,
-    @SerializedName("flight_Date")
-    val flightDate: String,
-    @SerializedName("Airline_Name")
-    val airlineName: String,
-    @SerializedName("Plane_class")
+    @SerializedName("origin_code")
+    val originCode: String,
+    @SerializedName("origin_name")
+    val originName: String,
+    @SerializedName("origin_city")
+    val originCity: String,
+    @SerializedName("destination_code")
+    val destinationCode: String,
+    @SerializedName("destination_name")
+    val destinationName: String,
+    @SerializedName("destination_city")
+    val destinationCity: String,
+    @SerializedName("plane_class")
     val planeClass: String,
-    @SerializedName("Price")
+    @SerializedName("flight_date")
+    val flightDate: String,
+    @SerializedName("airline_name")
+    val airlineName: String,
+    @SerializedName("departure_hour")
+    val departureHour: String,
+    @SerializedName("arrival_hour")
+    val arrivalHour: String,
+    @SerializedName("price")
     val price: Int,
     @SerializedName("createdAt")
     val createdAt: String,

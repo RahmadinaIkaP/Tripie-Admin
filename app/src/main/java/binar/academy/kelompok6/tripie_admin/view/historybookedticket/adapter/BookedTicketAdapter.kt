@@ -1,4 +1,4 @@
-package binar.academy.kelompok6.tripie_admin.view.bookedticketlist.adapter
+package binar.academy.kelompok6.tripie_admin.view.historybookedticket.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,6 +7,9 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import binar.academy.kelompok6.tripie_admin.databinding.ItemHistoryBookedTicketBinding
 import binar.academy.kelompok6.tripie_admin.model.response.Booking
+import binar.academy.kelompok6.tripie_admin.utils.RupiahConverter
+import java.text.SimpleDateFormat
+import java.util.*
 
 class BookedTicketAdapter (private val onClick : BookedTicketInterface) : RecyclerView.Adapter<BookedTicketAdapter.ViewHolder>() {
 
@@ -27,8 +30,27 @@ class BookedTicketAdapter (private val onClick : BookedTicketInterface) : Recycl
         RecyclerView.ViewHolder(binding.root){
         fun bind(booking: Booking){
 
-            itemView.setOnClickListener {
-                onClick.onItemClick(booking)
+            binding.apply {
+                dataTicket = booking
+
+                val dateFormat = SimpleDateFormat("HH:mm:ss", Locale.getDefault())
+                val convertedDepartHour = dateFormat.parse(booking.departureHour)?.let {
+                    SimpleDateFormat("HH:mm",
+                        Locale.getDefault()).format(it)
+                }
+
+                val convertedArriveHour = dateFormat.parse(booking.arrivalHour)?.let {
+                    SimpleDateFormat("HH:mm",
+                        Locale.getDefault()).format(it)
+                }
+
+                tvDepartTime.text = convertedDepartHour
+                tvArriveTime.text = convertedArriveHour
+                tvBookedFlightPrice.text = RupiahConverter.rupiah(booking.price)
+
+                btnDetailTiket.setOnClickListener {
+                    onClick.onItemClick(booking)
+                }
             }
         }
     }

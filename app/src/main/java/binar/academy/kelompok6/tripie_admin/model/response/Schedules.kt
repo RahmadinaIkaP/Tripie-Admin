@@ -1,12 +1,11 @@
-package binar.academy.kelompok6.tripie_admin.model.request
+package binar.academy.kelompok6.tripie_admin.model.response
 
 
-import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.parcelize.Parcelize
 
-@Parcelize
-data class AddEditScheduleRequest(
+data class Schedules(
+    @SerializedName("id")
+    val id: Int,
     @SerializedName("origin_code")
     val originCode: String,
     @SerializedName("origin_name")
@@ -30,5 +29,11 @@ data class AddEditScheduleRequest(
     @SerializedName("arrival_hour")
     val arrivalHour: String,
     @SerializedName("price")
-    val price: Int
-) : Parcelable
+    val price: Int,
+    @SerializedName("capacity")
+    val capacity: Int,
+    @SerializedName("createdAt")
+    val createdAt: String,
+    @SerializedName("updatedAt")
+    val updatedAt: String
+)
