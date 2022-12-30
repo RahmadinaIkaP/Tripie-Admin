@@ -16,12 +16,19 @@ class SharedPref(private val context: Context) {
     private val token = stringPreferencesKey("token")
     private val email = stringPreferencesKey("email")
     private val name = stringPreferencesKey("name")
+    private val planeClass = stringPreferencesKey("pclass")
 
     suspend fun saveData(tokens : String, emails : String, names : String){
         context.dataStore.edit {
             it[token] = tokens
             it[email] = emails
             it[name] = names
+        }
+    }
+
+    suspend fun savePlane(pclass : String){
+        context.dataStore.edit {
+            it[planeClass] = pclass
         }
     }
 
@@ -38,6 +45,11 @@ class SharedPref(private val context: Context) {
     val getName : Flow<String> = context.dataStore.data
         .map {
             it[name] ?: "Undefined"
+        }
+
+    val getPlane : Flow<String> = context.dataStore.data
+        .map {
+            it[planeClass] ?: "Undefined"
         }
 
     suspend fun removeToken(){

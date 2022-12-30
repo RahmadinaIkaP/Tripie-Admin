@@ -6,11 +6,15 @@ import androidx.recyclerview.widget.RecyclerView
 import binar.academy.kelompok6.tripie_admin.databinding.ItemFlightFilterDialogBinding
 import binar.academy.kelompok6.tripie_admin.model.PlaneClass
 
-class PlaneClassFilterAdapter(private val listPlane: List<PlaneClass>,private val onClick : FilterInterface) : RecyclerView.Adapter<PlaneClassFilterAdapter.ViewHolder>() {
+class PlaneClassFilterAdapter(
+    private val name : String,
+    private val listPlane: List<PlaneClass>,
+    private val onClick : FilterInterface) : RecyclerView.Adapter<PlaneClassFilterAdapter.ViewHolder>() {
 
     inner class ViewHolder(private val binding : ItemFlightFilterDialogBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(planeClass: PlaneClass){
             binding.textViewFilterClass.text = planeClass.kelasPesawat
+            binding.radioButton.isChecked = planeClass.kelasPesawat == name
             itemView.setOnClickListener {
                 onClick.onItemClick(planeClass)
             }

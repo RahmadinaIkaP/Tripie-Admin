@@ -16,10 +16,10 @@ class PlaneClassViewModel : ViewModel() {
     )
 
     private val listPlaneClassFilter = arrayListOf(
+        PlaneClass("all class"),
         PlaneClass("economy"),
         PlaneClass("business"),
-        PlaneClass("first class"),
-        PlaneClass("all class")
+        PlaneClass("first class")
     )
 
     fun getPlaneClass(){

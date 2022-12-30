@@ -15,6 +15,8 @@ import binar.academy.kelompok6.tripie_admin.model.response.LoginResponse
 import binar.academy.kelompok6.tripie_admin.view.MainActivity
 import binar.academy.kelompok6.tripie_admin.view.authentication.viewmodel.AuthViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
@@ -75,7 +77,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun saveData(token : String, email : String, name : String) {
-        GlobalScope.launch {
+        CoroutineScope(Dispatchers.IO).launch {
             sharedPref.saveData(token, email, name)
         }
     }

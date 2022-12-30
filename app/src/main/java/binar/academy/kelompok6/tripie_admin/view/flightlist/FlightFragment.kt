@@ -31,6 +31,11 @@ class FlightFragment : Fragment(), FlightAdapter.FlightInterface {
     private lateinit var adapter : FlightAdapter
     private val flightScheduleViewModel : FlightScheduleViewModel by viewModels()
 
+    override fun onResume() {
+        super.onResume()
+        (activity as MainActivity).supportActionBar?.title = "Daftar Penerbangan"
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
