@@ -12,6 +12,8 @@ import binar.academy.kelompok6.tripie_admin.model.response.Booking
 import binar.academy.kelompok6.tripie_admin.utils.RupiahConverter
 import binar.academy.kelompok6.tripie_admin.view.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
+import java.text.SimpleDateFormat
+import java.util.*
 
 @AndroidEntryPoint
 class DetailTicketBookedFragment : Fragment() {
@@ -38,18 +40,39 @@ class DetailTicketBookedFragment : Fragment() {
     }
 
     private fun setDataTiket(data: Booking?) {
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.getDefault())
+        val flightDate = SimpleDateFormat("d MMMM y",
+            Locale.getDefault()).format(data?.flightDate?.let { dateFormat.parse(it) }!!)
+        val flightBackDate = data.flightBackDate?.let {
+            dateFormat.parse(it)?.let { date->
+                SimpleDateFormat("d MMMM y",
+                    Locale.getDefault()).format(date)
+            }
+        }
+
+        val timeFormat = SimpleDateFormat("HH:mm:ss", Locale.getDefault())
+        val convertedDepartHour = timeFormat.parse(data.departureHour)?.let {
+            SimpleDateFormat("HH:mm",
+                Locale.getDefault()).format(it)
+        }
+        val convertedArriveHour = timeFormat.parse(data.arrivalHour)?.let {
+            SimpleDateFormat("HH:mm",
+                Locale.getDefault()).format(it)
+        }
+
         binding.apply {
-            tvNamaPenumpang.text = data?.passengerName ?: "Undefined"
-            tvDepartureT.text = "${data?.originCode},${data?.originCity}"
-            tvDestinationT.text = "${data?.destinationCode},${data?.destinationCity}"
-            tvFlightDateDepart.text = data?.flightDate ?: "Undefined"
-            tvFlightDateArrive.text = data?.flightDate ?: "Undefined"
-            tvTimeDepart.text = data?.departureHour ?: "Undefined"
-            tvTimeArrive.text = data?.arrivalHour ?: "Undefined"
-            tvPriceT.text = RupiahConverter.rupiah(data?.price)
-            tvBookingId.text = data?.id.toString()
-            tvClassPesawat.text = data?.planeClass
-            tvNamaPesawat.text = data?.airlineName
+            tvNamaPenumpang.text = data.passengerName
+            tvDepartureT.text = "${data.originCode},${data.originCity}"
+            tvDestinationT.text = "${data.destinationCode},${data.destinationCity}"
+            tvFlightDateDepart.text = flightDate
+            tvFlightDateArrive.text = flightDate
+            tvTimeDepart.text = convertedDepartHour
+            tvTimeArrive.text = convertedArriveHour
+            tvPriceT.text = RupiahConverter.rupiah(data.price)
+            tvBookingId.text = data.id.toString()
+            tvClassPesawat.text = data.planeClass
+            tvNamaPesawat.text = data.airlineName
+            tvTipePenerbangan.text = data.flightType
         }
     }
 

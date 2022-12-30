@@ -60,9 +60,9 @@ class FlightFragment : Fragment(), FlightAdapter.FlightInterface {
                 findNavController().navigate(R.id.action_flightFragment_to_flightFilterListDialog)
             }
 
-            btnSortPrice.setOnClickListener {
-                findNavController().navigate(R.id.action_flightFragment_to_sortingPriceDialog)
-            }
+//            btnSortPrice.setOnClickListener {
+//                findNavController().navigate(R.id.action_flightFragment_to_sortingPriceDialog)
+//            }
         }
 
         setFlightRvData()

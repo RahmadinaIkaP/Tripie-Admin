@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.appcompat.widget.SearchView
+        <SearchView
             android:id="@+id/svHistoryBookedTicket"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -23,11 +23,11 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:background="@color/white"
-            app:iconifiedByDefault="false"
+            android:iconifiedByDefault="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:queryHint="Cari tiket" />
+            android:queryHint="Cari tiket" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

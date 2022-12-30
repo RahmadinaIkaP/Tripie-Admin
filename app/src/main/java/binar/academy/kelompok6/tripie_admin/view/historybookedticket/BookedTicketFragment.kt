@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -73,12 +74,24 @@ class BookedTicketFragment : Fragment(), BookedTicketAdapter.BookedTicketInterfa
     }
 
     private fun setDataRv(booking: List<Booking>) {
-        adapter = BookedTicketAdapter(this)
+        adapter = BookedTicketAdapter(booking,this)
         adapter.setData(booking)
 
         binding.apply {
             rvHistoryBookedTicket.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
             rvHistoryBookedTicket.adapter = adapter
+
+            svHistoryBookedTicket.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    adapter.filter.filter(query)
+                    return false
+                }
+
+                override fun onQueryTextChange(newText: String?): Boolean {
+                    adapter.filter.filter(newText)
+                    return true
+                }
+            })
         }
     }
 
