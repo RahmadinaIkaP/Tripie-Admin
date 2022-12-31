@@ -67,9 +67,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins"
+                        android:maxWidth="70dp"
                         android:text='@{dataTicket.originCity, default="Kota 1"}'
                         android:textColor="@color/gray"
-                        android:textSize="14sp" />
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/tvDepartTime"
@@ -149,9 +150,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins"
+                        android:maxWidth="70dp"
+                        android:textAlignment="textEnd"
                         android:text='@{dataTicket.destinationCity, default="Kota 2"}'
                         android:textColor="@color/gray"
-                        android:textSize="14sp" />
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/tvArriveTime"

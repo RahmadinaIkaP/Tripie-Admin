@@ -59,7 +59,8 @@ class BookedTicketFragment : Fragment(), BookedTicketAdapter.BookedTicketInterfa
                 is ApiResponse.Success -> {
                     stopLoading()
                     response.data?.let {
-                        setDataRv(response.data.data.booking)
+                        val filteredHistory = response.data.data.booking.filter { booking -> booking.schedules != null  }
+                        setDataRv(filteredHistory)
                     }
                     Log.d("Success: ", response.toString())
                 }

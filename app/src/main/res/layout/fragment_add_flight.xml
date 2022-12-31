@@ -54,7 +54,9 @@
                         android:id="@+id/etOgDestinationCode"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Kode Bandara Asal" />
+                        android:hint="Kode Bandara Asal"
+                        android:focusable="false"
+                        android:clickable="false"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -69,7 +71,7 @@
                         android:layout_height="wrap_content"
                         android:hint="Kota Bandara Asal"
                         android:focusable="false"
-                        />
+                        android:clickable="false"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -98,7 +100,9 @@
                         android:id="@+id/etDestinationAirportCode"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Kode Bandara Tujuan" />
+                        android:hint="Kode Bandara Tujuan"
+                        android:focusable="false"
+                        android:clickable="false"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -113,7 +117,7 @@
                         android:layout_height="wrap_content"
                         android:hint="Kota Bandara Asal"
                         android:focusable="false"
-                        />
+                        android:clickable="false"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -131,7 +135,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Tanggal"
-                        android:inputType="date" />
+                        android:inputType="date"
+                        android:focusable="false"
+                        android:clickable="false"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -146,7 +152,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Kelas Pesawat"
-                        android:inputType="date" />
+                        android:focusable="false"
+                        android:clickable="false" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 

@@ -73,6 +73,12 @@ class DetailTicketBookedFragment : Fragment() {
             tvClassPesawat.text = data.planeClass
             tvNamaPesawat.text = data.airlineName
             tvTipePenerbangan.text = data.flightType
+
+            if (data.flightType.lowercase() == "round trip"){
+                tvPulang.text = flightBackDate
+            }else{
+                tvPulang.text = "-"
+            }
         }
     }
 

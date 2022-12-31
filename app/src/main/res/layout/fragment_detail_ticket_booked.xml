@@ -262,6 +262,38 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout11">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Tanggal Pulang: "
+                        android:textColor="@color/gray"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvPulang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Tanggal"
+                        android:textColor="@color/soft_black"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
                 <LinearLayout
                     android:id="@+id/linearLayout9"
                     android:layout_width="wrap_content"
@@ -270,7 +302,7 @@
                     android:gravity="center"
                     android:orientation="vertical"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout11">
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout12">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -296,13 +328,13 @@
                     android:id="@+id/linearLayout10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
                     android:layout_marginTop="32dp"
+                    android:gravity="center"
                     android:orientation="vertical"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/linearLayout11"
                     app:layout_constraintStart_toEndOf="@+id/linearLayout9"
-                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout11">
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout12">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -332,7 +364,7 @@
                     android:gravity="center"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout11">
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout12">
 
                     <TextView
                         android:layout_width="wrap_content"
