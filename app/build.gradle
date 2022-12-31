@@ -21,7 +21,9 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    packagingOptions {
+        resources.excludes.add("META-INF/*")
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -103,4 +105,11 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:31.1.1')
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-crashlytics-ktx'
+
+    //testing
+    testImplementation "io.mockk:mockk:1.13.1"
+
+    // mockk
+    implementation "io.mockk:mockk:1.13.1"
+    testImplementation "io.mockk:mockk:1.13.1"
 }
