@@ -53,7 +53,7 @@ data class Booking(
     @SerializedName("updatedAt")
     val updatedAt: String,
     @SerializedName("users")
-    val users: @RawValue Users,
+    val users: Users,
     @SerializedName("schedules")
-    val schedules: @RawValue Schedules
+    val schedules: Schedules
 ) : Parcelable

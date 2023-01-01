@@ -5,11 +5,14 @@
 package binar.academy.kelompok6.tripie_admin.model.response
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
 @Suppress("unused", "unused", "unused", "unused", "unused", "unused", "unused", "unused", "unused",
     "unused", "unused", "unused", "unused", "unused", "unused", "unused"
 )
+@Parcelize
 data class Schedules(
     @SerializedName("id")
     val id: Int,
@@ -43,4 +46,4 @@ data class Schedules(
     val createdAt: String,
     @SerializedName("updatedAt")
     val updatedAt: String
-)
+) : Parcelable
