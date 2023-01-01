@@ -79,11 +79,11 @@ class EditFlightFragment : Fragment() {
 
             getNameDestinationAirport()
 
-            etEditFlightClass.setOnClickListener {
-                findNavController().navigate(R.id.action_editFlightFragment_to_listPlaneClassFragment)
-            }
-
-            getPlaneClass()
+//            etEditFlightClass.setOnClickListener {
+//                findNavController().navigate(R.id.action_editFlightFragment_to_listPlaneClassFragment)
+//            }
+//
+//            getPlaneClass()
 
             btnUpdateFlight.setOnClickListener {
                 sharedPref.getToken.asLiveData().observe(requireActivity()){ token ->

@@ -159,10 +159,7 @@
                             android:id="@+id/etEditFlightClass"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text='@{scheduleDataEdit.planeClass, default="Kelas Pesawat"}'
-                            android:focusable="false"
-                            android:clickable="false"/>
-
+                            android:text='@{scheduleDataEdit.planeClass, default="Kelas Pesawat"}' />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
