@@ -1,3 +1,7 @@
+@file:Suppress("UNCHECKED_CAST", "unused", "unused", "unused", "unused", "unused", "unused",
+    "unused"
+)
+
 package binar.academy.kelompok6.tripie_admin.view.historybookedticket.adapter
 
 import android.view.LayoutInflater
@@ -13,6 +17,7 @@ import binar.academy.kelompok6.tripie_admin.utils.RupiahConverter
 import java.text.SimpleDateFormat
 import java.util.*
 
+@Suppress("unused", "unused", "unused", "unused", "unused", "unused", "unused")
 class BookedTicketAdapter (private var listBooking : List<Booking>,
                            private val onClick : BookedTicketInterface) :
     RecyclerView.Adapter<BookedTicketAdapter.ViewHolder>(), Filterable {

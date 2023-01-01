@@ -35,7 +35,8 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:src="@drawable/ic_plane_blue" />
+                    android:src="@drawable/ic_plane_blue"
+                    android:contentDescription="@string/todo12" />
 
                 <TextView
                     android:id="@+id/tvAirportDepart"
@@ -53,7 +54,8 @@
                     android:layout_height="20dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
-                    android:src="@drawable/ic_arrow" />
+                    android:src="@drawable/ic_arrow"
+                    android:contentDescription="@string/todo13" />
 
                 <TextView
                     android:id="@+id/tvAirporArrive"
@@ -90,7 +92,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:text="Tanggal Penerbangan"
+                    android:text="@string/tanggal_penerbangan1"
                     android:textColor="@color/gray"
                     android:textSize="12sp"
                     android:fontFamily="@font/poppins"/>
@@ -119,7 +121,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Kelas"
+                    android:text="@string/kelas1"
                     android:textColor="@color/soft_black"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -151,7 +153,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Jam Keberangkatan"
+                    android:text="@string/jam_keberangkatan1"
                     android:textColor="@color/soft_black"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -162,7 +164,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
-                    android:text="Jam Berangkat"
+                    android:text="@string/jam_berangkat"
                     android:textColor="@color/soft_black"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -183,7 +185,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Jam Tiba"
+                    android:text="@string/jam_tiba1"
                     android:textColor="@color/soft_black"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -194,7 +196,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
-                    android:text="Jam Tiba"
+                    android:text="@string/jam_tiba3"
                     android:textColor="@color/soft_black"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -215,7 +217,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Harga"
+                    android:text="@string/harga2"
                     android:textColor="@color/soft_black"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"

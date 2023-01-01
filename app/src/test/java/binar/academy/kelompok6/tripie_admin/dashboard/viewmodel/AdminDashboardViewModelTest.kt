@@ -1,6 +1,11 @@
+@file:Suppress("unused", "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate",
+    "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate",
+    "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate",
+    "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate", "unused", "unused"
+)
+
 package binar.academy.kelompok6.tripie_admin.dashboard.viewmodel
 
-import binar.academy.kelompok6.tripie_admin.data.datastore.SharedPref
 import binar.academy.kelompok6.tripie_admin.data.network.ApiEndpoint
 import binar.academy.kelompok6.tripie_admin.model.response.AirportResponse
 import binar.academy.kelompok6.tripie_admin.model.response.GetUserResponse
@@ -13,9 +18,12 @@ import org.junit.Before
 import org.junit.Test
 import retrofit2.Call
 
+@Suppress("MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate",
+    "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate",
+    "MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate", "unused"
+)
 class AdminDashboardViewModelTest {
     lateinit var service : ApiEndpoint
-    private lateinit var sharedPref: SharedPref
 
     @Before
     fun setUp() {

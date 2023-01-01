@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="IconDuplicatesConfig">
+        <ignore path="C:/Users/killo/AndroidStudioProjects/Tripie-Admin2/app/src/main/res/mipmap-hdpi/ic_launcher.webp" />
+        <ignore path="C:/Users/killo/AndroidStudioProjects/Tripie-Admin2/app/src/main/res/mipmap-hdpi/ic_launcher.webp" />
+        <ignore path="C:/Users/killo/AndroidStudioProjects/Tripie-Admin2/app/src/main/res/mipmap-hdpi/ic_launcher.webp" />
+        <ignore path="C:/Users/killo/AndroidStudioProjects/Tripie-Admin2/app/src/main/res/mipmap-mdpi/ic_launcher.webp" />
+        <ignore path="C:/Users/killo/AndroidStudioProjects/Tripie-Admin2/app/src/main/res/mipmap-mdpi/ic_launcher.webp" />
+        <ignore path="C:/Users/killo/AndroidStudioProjects/Tripie-Admin2/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" />
+        <ignore path="C:/Users/killo/AndroidStudioProjects/Tripie-Admin2/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" />
+        <ignore path="C:/Users/killo/AndroidStudioProjects/Tripie-Admin2/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" />
+        <ignore path="C:/Users/killo/AndroidStudioProjects/Tripie-Admin2/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" />
+        <ignore path="C:/Users/killo/AndroidStudioProjects/Tripie-Admin2/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" />
+    </issue>
+</lint>

@@ -1,3 +1,5 @@
+@file:Suppress("unused", "unused", "unused", "unused", "unused", "unused")
+
 package binar.academy.kelompok6.tripie_admin.view.flightlist.adapter
 
 import android.view.LayoutInflater
@@ -10,6 +12,7 @@ import binar.academy.kelompok6.tripie_admin.model.response.Jadwal
 import java.text.SimpleDateFormat
 import java.util.*
 
+@Suppress("unused", "unused", "unused", "unused", "unused", "unused")
 class FlightAdapter (private val onClick : FlightInterface) : RecyclerView.Adapter<FlightAdapter.ViewHolder>() {
 
     private val differCallback = object : DiffUtil.ItemCallback<Jadwal>(){

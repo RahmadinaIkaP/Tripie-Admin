@@ -1,5 +1,8 @@
+@file:Suppress("unused", "unused", "unused")
+
 package binar.academy.kelompok6.tripie_admin.view
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,6 +14,8 @@ import binar.academy.kelompok6.tripie_admin.databinding.ActivitySplashScreenBind
 import binar.academy.kelompok6.tripie_admin.view.authentication.LoginActivity
 import dagger.hilt.android.AndroidEntryPoint
 
+@SuppressLint("CustomSplashScreen")
+@Suppress("unused", "unused", "unused")
 @AndroidEntryPoint
 class SplashScreenActivity : AppCompatActivity() {
     private lateinit var binding : ActivitySplashScreenBinding

@@ -1,16 +1,17 @@
+@file:Suppress("unused", "unused", "unused", "unused", "unused", "unused", "unused")
+
 package binar.academy.kelompok6.tripie_admin.view.dashboard
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.asLiveData
-import binar.academy.kelompok6.tripie_admin.R
 import binar.academy.kelompok6.tripie_admin.data.datastore.SharedPref
 import binar.academy.kelompok6.tripie_admin.data.network.ApiResponse
 import binar.academy.kelompok6.tripie_admin.databinding.FragmentDashboardBinding
@@ -20,6 +21,7 @@ import binar.academy.kelompok6.tripie_admin.view.dashboard.viewmodel.DashboardVi
 import binar.academy.kelompok6.tripie_admin.view.historybookedticket.viewmodel.HistoryBookingViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
+@Suppress("unused", "unused", "unused", "unused", "unused", "unused", "unused")
 @AndroidEntryPoint
 class DashboardFragment : Fragment() {
     private var _binding : FragmentDashboardBinding? = null

@@ -1,3 +1,5 @@
+@file:Suppress("unused", "unused", "unused", "unused", "unused", "unused")
+
 package binar.academy.kelompok6.tripie_admin.view.flightlist.adapter
 
 import android.view.LayoutInflater
@@ -7,8 +9,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import binar.academy.kelompok6.tripie_admin.databinding.ItemAirportBinding
 import binar.academy.kelompok6.tripie_admin.model.PlaneClass
-import binar.academy.kelompok6.tripie_admin.model.response.Airport
 
+@Suppress("unused", "unused", "unused", "unused", "unused", "unused")
 class PlaneClassAdapter(private val onClick : PlaneClassInterface) : RecyclerView.Adapter<PlaneClassAdapter.ViewHolder>() {
 
     private val differCallback = object : DiffUtil.ItemCallback<PlaneClass>(){

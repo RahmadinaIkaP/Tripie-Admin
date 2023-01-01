@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package binar.academy.kelompok6.tripie_admin.di
 
 import binar.academy.kelompok6.tripie_admin.utils.Constant.Companion.BASE_URL
@@ -12,6 +14,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
+@Suppress("unused")
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {

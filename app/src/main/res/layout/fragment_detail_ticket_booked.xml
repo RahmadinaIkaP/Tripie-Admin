@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/light_gray"
-    tools:context=".view.historybookedticket.DetailTicketBookedFragment">
+    tools:context=".view.historybookedticket.DetailTicketBookedFragment"
+    tools:ignore="Overdraw">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -44,7 +45,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semibold"
-                        android:text="Penumpang"
+                        android:text="@string/penumpang"
                         android:textColor="@color/gray"
                         android:textSize="16sp" />
 
@@ -53,7 +54,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semibold"
-                        android:text="Mamang Kesbor"
+                        android:text="@string/mamang_kesbor"
                         android:textColor="@color/soft_black"
                         android:textSize="16sp" />
 
@@ -71,7 +72,8 @@
                     <ImageView
                         android:layout_width="12dp"
                         android:layout_height="12dp"
-                        android:background="@drawable/blue_circle" />
+                        android:background="@drawable/blue_circle"
+                        android:contentDescription="@string/todo8" />
 
                     <View
                         android:layout_width="match_parent"
@@ -81,7 +83,8 @@
                     <ImageView
                         android:layout_width="12dp"
                         android:layout_height="12dp"
-                        android:background="@drawable/blue_circle_outline" />
+                        android:background="@drawable/blue_circle_outline"
+                        android:contentDescription="@string/todo9" />
 
                 </LinearLayout>
 
@@ -99,7 +102,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semibold"
-                        android:text="CGK, Jakarta"
+                        android:text="@string/cgk_jakarta"
                         android:textColor="@color/soft_black"
                         android:textSize="14sp"
                         app:layout_constraintStart_toStartOf="parent"
@@ -110,7 +113,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semibold"
-                        android:text="26, Nov 2022"
+                        android:text="@string/_26_nov_2022"
                         android:textColor="@color/soft_black"
                         android:textSize="14sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -124,7 +127,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
                         android:fontFamily="@font/poppins_semibold"
-                        android:text="07:40"
+                        android:text="@string/_07_40"
                         android:textColor="@color/soft_black"
                         android:textSize="14sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -146,7 +149,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semibold"
-                        android:text="CGK, Jakarta"
+                        android:text="@string/cgk_jakarta1"
                         android:textColor="@color/soft_black"
                         android:textSize="14sp"
                         app:layout_constraintStart_toStartOf="parent"
@@ -157,7 +160,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semibold"
-                        android:text="26, Nov 2022"
+                        android:text="@string/_26_nov_20221"
                         android:textColor="@color/soft_black"
                         android:textSize="14sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -171,7 +174,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
                         android:fontFamily="@font/poppins_semibold"
-                        android:text="07:40"
+                        android:text="@string/_07_401"
                         android:textColor="@color/soft_black"
                         android:textSize="14sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -212,7 +215,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semibold"
-                        android:text="Harga:"
+                        android:text="@string/harga1"
                         android:textColor="@color/dark_blue"
                         android:textSize="16sp"
                         app:layout_constraintStart_toStartOf="parent"
@@ -223,7 +226,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semibold"
-                        android:text="IDR 2.000.000"
+                        android:text="@string/idr_2_000_000"
                         android:textColor="@color/dark_blue"
                         android:textSize="16sp"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -243,7 +246,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semibold"
-                        android:text="Tipe Penerbangan: "
+                        android:text="@string/tipe_penerbangan"
                         android:textColor="@color/gray"
                         android:textSize="16sp"
                         app:layout_constraintStart_toStartOf="parent"
@@ -254,7 +257,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semibold"
-                        android:text="One Way"
+                        android:text="@string/one_way"
                         android:textColor="@color/soft_black"
                         android:textSize="16sp"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -275,7 +278,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semibold"
-                        android:text="Tanggal Pulang: "
+                        android:text="@string/tanggal_pulang"
                         android:textColor="@color/gray"
                         android:textSize="16sp"
                         app:layout_constraintStart_toStartOf="parent"
@@ -286,7 +289,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semibold"
-                        android:text="Tanggal"
+                        android:text="@string/tanggal1"
                         android:textColor="@color/soft_black"
                         android:textSize="16sp"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -308,7 +311,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semibold"
-                        android:text="Booking ID"
+                        android:text="@string/booking_id"
                         android:textColor="@color/gray"
                         android:textSize="16sp" />
 
@@ -318,7 +321,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/poppins_semibold"
-                        android:text="00023923"
+                        android:text="@string/_00023923"
                         android:textColor="@color/dark_blue"
                         android:textSize="16sp" />
 
@@ -340,7 +343,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semibold"
-                        android:text="Kelas"
+                        android:text="@string/kelas"
                         android:textColor="@color/gray"
                         android:textSize="16sp" />
 
@@ -350,7 +353,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/poppins_semibold"
-                        android:text="Ekonomi"
+                        android:text="@string/ekonomi"
                         android:textColor="@color/dark_blue"
                         android:textSize="16sp" />
 
@@ -370,7 +373,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semibold"
-                        android:text="Pesawat"
+                        android:text="@string/pesawat"
                         android:textColor="@color/gray"
                         android:textSize="16sp" />
 
@@ -380,7 +383,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/poppins_semibold"
-                        android:text="Boeing 737"
+                        android:text="@string/boeing_737"
                         android:textColor="@color/dark_blue"
                         android:textSize="16sp" />
 

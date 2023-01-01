@@ -1,3 +1,7 @@
+@file:Suppress("MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate",
+    "MemberVisibilityCanBePrivate", "unused"
+)
+
 package binar.academy.kelompok6.tripie_admin.authentication.viewmodel
 
 import binar.academy.kelompok6.tripie_admin.data.network.ApiEndpoint
@@ -12,6 +16,9 @@ import org.junit.Before
 import org.junit.Test
 import retrofit2.Call
 
+@Suppress("MemberVisibilityCanBePrivate", "MemberVisibilityCanBePrivate",
+    "MemberVisibilityCanBePrivate", "unused"
+)
 class AuthenticationViewModelTest {
 
     lateinit var service : ApiEndpoint

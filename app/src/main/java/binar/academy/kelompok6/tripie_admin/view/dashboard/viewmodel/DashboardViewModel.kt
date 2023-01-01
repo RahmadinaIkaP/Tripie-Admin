@@ -1,3 +1,5 @@
+@file:Suppress("unused", "unused", "unused", "unused", "unused")
+
 package binar.academy.kelompok6.tripie_admin.view.dashboard.viewmodel
 
 import androidx.lifecycle.MutableLiveData
@@ -14,6 +16,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import javax.inject.Inject
 
+@Suppress("unused", "unused", "unused", "unused", "unused")
 @HiltViewModel
 class DashboardViewModel @Inject constructor(private val api : ApiEndpoint) : ViewModel(){
 

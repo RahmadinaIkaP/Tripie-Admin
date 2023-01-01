@@ -1,3 +1,5 @@
+@file:Suppress("unused", "unused", "unused")
+
 package binar.academy.kelompok6.tripie_admin.view.historybookedticket.viewmodel
 
 import androidx.lifecycle.MutableLiveData
@@ -13,6 +15,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import javax.inject.Inject
 
+@Suppress("unused", "unused", "unused")
 @HiltViewModel
 class HistoryBookingViewModel @Inject constructor(private val api : ApiEndpoint) : ViewModel() {
 

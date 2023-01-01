@@ -15,6 +15,7 @@ android {
     defaultConfig {
         applicationId "binar.academy.kelompok6.tripie_admin"
         minSdk 24
+        //noinspection OldTargetApi
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -45,6 +46,7 @@ android {
 
 dependencies {
 
+    //noinspection GradleDependency
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
@@ -71,6 +73,7 @@ dependencies {
     // viewModel
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
+    //noinspection GradleDependency
     implementation "androidx.activity:activity-ktx:1.5.1"
 
     // retrofit
@@ -78,12 +81,16 @@ dependencies {
 
     // GSON
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    //noinspection GradleDependency
     implementation 'com.google.code.gson:gson:2.9.0'
 
+    //noinspection GradleDependency
     // Okhttp
+    //noinspection GradleDependency,GradleDependency
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.3'
 
     // glide
+    //noinspection GradleDependency
     implementation 'com.github.bumptech.glide:glide:4.13.2'
     kapt 'com.github.bumptech.glide:compiler:4.13.2'
 
@@ -95,6 +102,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.5.1")
 
     // dagger hilt
+    //noinspection GradleDependency
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
 

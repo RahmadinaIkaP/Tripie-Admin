@@ -1,3 +1,7 @@
+@file:Suppress("RedundantNullableReturnType", "unused", "unused", "unused", "unused", "unused",
+    "unused", "unused", "unused"
+)
+
 package binar.academy.kelompok6.tripie_admin.view.flightlist
 
 import android.os.Bundle
@@ -18,6 +22,9 @@ import binar.academy.kelompok6.tripie_admin.view.dashboard.viewmodel.DashboardVi
 import binar.academy.kelompok6.tripie_admin.view.flightlist.adapter.AirportAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
+@Suppress("RedundantNullableReturnType", "unused", "unused", "unused", "unused", "unused", "unused",
+    "unused", "unused"
+)
 @AndroidEntryPoint
 class ListAirportDestinationFragment : Fragment(), AirportAdapter.AirportInterface {
     private var _binding : FragmentListAirportDestinationBinding? = null

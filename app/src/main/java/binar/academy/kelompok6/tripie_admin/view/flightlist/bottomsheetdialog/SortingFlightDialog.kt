@@ -1,3 +1,5 @@
+@file:Suppress("RedundantOverride", "unused")
+
 package binar.academy.kelompok6.tripie_admin.view.flightlist.bottomsheetdialog
 
 import android.os.Bundle
@@ -8,6 +10,7 @@ import binar.academy.kelompok6.tripie_admin.databinding.DialogFlightFilterBindin
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 
+@Suppress("RedundantOverride", "unused")
 @AndroidEntryPoint
 class SortingFlightDialog : BottomSheetDialogFragment() {
     private var _binding: DialogFlightFilterBinding? = null

@@ -15,7 +15,8 @@
         android:layout_marginTop="32dp"
         android:src="@drawable/ic_exit"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/todo3" />
 
     <TextView
         android:id="@+id/tvLabelKelas"
@@ -24,7 +25,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:fontFamily="@font/poppins_semibold"
-        android:text="Sorting"
+        android:text="@string/sorting"
         android:textColor="@color/soft_black"
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/ivFilterExit"
@@ -46,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semibold"
-            android:text="Harga"
+            android:text="@string/harga"
             android:textColor="@color/soft_black"
             android:textSize="16sp" />
 
@@ -63,7 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Paling mahal"
+                android:text="@string/paling_mahal"
                 android:textColor="@color/soft_black"
                 android:textSize="14sp"/>
 
@@ -76,7 +77,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Paling murah"
+                android:text="@string/paling_murah"
                 android:textColor="@color/soft_black"
                 android:textSize="14sp"/>
 
@@ -106,7 +107,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semibold"
             android:layout_marginTop="8dp"
-            android:text="Tanggal Penerbangan"
+            android:text="@string/tanggal_penerbangan"
             android:textColor="@color/soft_black"
             android:textSize="16sp" />
 
@@ -123,7 +124,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Terbaru"
+                android:text="@string/terbaru"
                 android:textColor="@color/soft_black"
                 android:textSize="14sp"/>
 
@@ -153,7 +154,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semibold"
             android:layout_marginTop="8dp"
-            android:text="Jam Keberangkatan"
+            android:text="@string/jam_keberangkatan"
             android:textColor="@color/soft_black"
             android:textSize="16sp" />
 
@@ -170,7 +171,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Paling awal"
+                android:text="@string/paling_awal"
                 android:textColor="@color/soft_black"
                 android:textSize="14sp"/>
 
@@ -183,7 +184,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Paling akhir"
+                android:text="@string/paling_akhir"
                 android:textColor="@color/soft_black"
                 android:textSize="14sp"/>
 
@@ -213,7 +214,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semibold"
             android:layout_marginTop="8dp"
-            android:text="Jam Tiba"
+            android:text="@string/jam_tiba"
             android:textColor="@color/soft_black"
             android:textSize="16sp" />
 
@@ -230,7 +231,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Paling awal"
+                android:text="@string/paling_awal2"
                 android:textColor="@color/soft_black"
                 android:textSize="14sp"/>
 
@@ -243,7 +244,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Paling akhir"
+                android:text="@string/paling_akhir2"
                 android:textColor="@color/soft_black"
                 android:textSize="14sp"/>
 

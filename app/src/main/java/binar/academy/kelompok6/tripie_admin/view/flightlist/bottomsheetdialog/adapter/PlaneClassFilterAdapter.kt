@@ -1,3 +1,5 @@
+@file:Suppress("unused", "unused", "unused", "unused", "unused")
+
 package binar.academy.kelompok6.tripie_admin.view.flightlist.bottomsheetdialog.adapter
 
 import android.view.LayoutInflater
@@ -6,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import binar.academy.kelompok6.tripie_admin.databinding.ItemFlightFilterDialogBinding
 import binar.academy.kelompok6.tripie_admin.model.PlaneClass
 
+@Suppress("unused", "unused", "unused", "unused", "unused")
 class PlaneClassFilterAdapter(
     private val name : String,
     private val listPlane: List<PlaneClass>,

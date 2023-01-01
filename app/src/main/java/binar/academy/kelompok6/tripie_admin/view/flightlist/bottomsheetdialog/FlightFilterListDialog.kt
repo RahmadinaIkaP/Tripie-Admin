@@ -1,7 +1,8 @@
+@file:Suppress("unused", "unused", "unused", "unused", "unused")
+
 package binar.academy.kelompok6.tripie_admin.view.flightlist.bottomsheetdialog
 
 import android.os.Bundle
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,12 +14,15 @@ import binar.academy.kelompok6.tripie_admin.data.datastore.SharedPref
 import binar.academy.kelompok6.tripie_admin.databinding.DialogFlightFilterBinding
 import binar.academy.kelompok6.tripie_admin.model.PlaneClass
 import binar.academy.kelompok6.tripie_admin.view.MainActivity
-import binar.academy.kelompok6.tripie_admin.view.flightlist.adapter.PlaneClassAdapter
 import binar.academy.kelompok6.tripie_admin.view.flightlist.bottomsheetdialog.adapter.PlaneClassFilterAdapter
 import binar.academy.kelompok6.tripie_admin.view.flightlist.viewmodel.PlaneClassViewModel
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
+@Suppress("unused", "unused", "unused", "unused", "unused")
+@OptIn(DelicateCoroutinesApi::class)
 class FlightFilterListDialog : BottomSheetDialogFragment(), PlaneClassFilterAdapter.FilterInterface {
 
     private var _binding: DialogFlightFilterBinding? = null

@@ -1,9 +1,12 @@
+@file:Suppress("unused", "unused", "unused")
+
 package binar.academy.kelompok6.tripie_admin.view.flightlist.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import binar.academy.kelompok6.tripie_admin.model.PlaneClass
 
+@Suppress("unused", "unused", "unused")
 class PlaneClassViewModel : ViewModel() {
 
     val planeClassList : MutableLiveData<List<PlaneClass>> = MutableLiveData()

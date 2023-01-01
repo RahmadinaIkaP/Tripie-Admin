@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
@@ -78,7 +77,7 @@
                         android:layout_height="wrap_content"
                         android:maxWidth="60dp"
                         android:fontFamily="@font/poppins_semibold"
-                        android:text="Depart Time"
+                        android:text="@string/depart_time"
                         android:textColor="@color/soft_black"
                         android:textSize="15sp" />
 
@@ -99,7 +98,8 @@
                     <ImageView
                         android:layout_width="12dp"
                         android:layout_height="12dp"
-                        android:background="@drawable/blue_circle" />
+                        android:background="@drawable/blue_circle"
+                        android:contentDescription="@string/todo1" />
 
                     <View
                         android:layout_width="65dp"
@@ -110,7 +110,8 @@
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/ic_airplane_takeoff" />
+                        android:src="@drawable/ic_airplane_takeoff"
+                        android:contentDescription="@string/todo10" />
 
                     <View
                         android:layout_width="65dp"
@@ -121,7 +122,8 @@
                     <ImageView
                         android:layout_width="12dp"
                         android:layout_height="12dp"
-                        android:background="@drawable/blue_circle_outline" />
+                        android:background="@drawable/blue_circle_outline"
+                        android:contentDescription="@string/todo11" />
 
                 </LinearLayout>
 
@@ -162,7 +164,7 @@
                         android:layout_height="wrap_content"
                         android:maxWidth="60dp"
                         android:fontFamily="@font/poppins_semibold"
-                        android:text="Arrival Time"
+                        android:text="@string/arrival_time"
                         android:textColor="@color/soft_black"
                         android:textSize="15sp"
                         android:textAlignment="textEnd"/>
@@ -194,7 +196,7 @@
                     android:id="@+id/tvBookedFlightPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="IDR 2.000.000"
+                    android:text="@string/idr_2_000_0001"
                     android:textColor="@color/dark_blue"
                     android:textSize="14sp"
                     android:fontFamily="@font/poppins_semibold"
@@ -206,7 +208,7 @@
                     android:id="@+id/btnDetailTiket"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:text="Detail"
+                    android:text="@string/detail1"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:textSize="12sp"

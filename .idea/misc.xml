@@ -23,6 +23,41 @@
       </map>
     </option>
   </component>
+  <component name="EntryPointsManager">
+    <entry_points version="2.0">
+      <entry_point TYPE="field" FQNAME="binar.academy.kelompok6.tripie_admin.view.flightlist.AddFlightFragment airportViewModel$delegate" />
+      <entry_point TYPE="field" FQNAME="binar.academy.kelompok6.tripie_admin.view.flightlist.AddFlightFragment flightScheduleViewModel$delegate" />
+      <entry_point TYPE="field" FQNAME="binar.academy.kelompok6.tripie_admin.dashboard.viewmodel.AdminDashboardViewModelTest service" />
+      <entry_point TYPE="field" FQNAME="binar.academy.kelompok6.tripie_admin.data.datastore.SharedPref email" />
+      <entry_point TYPE="field" FQNAME="binar.academy.kelompok6.tripie_admin.data.datastore.SharedPref getEmail" />
+      <entry_point TYPE="field" FQNAME="binar.academy.kelompok6.tripie_admin.data.datastore.SharedPref getName" />
+      <entry_point TYPE="field" FQNAME="binar.academy.kelompok6.tripie_admin.data.datastore.SharedPref getPlane" />
+      <entry_point TYPE="field" FQNAME="binar.academy.kelompok6.tripie_admin.data.datastore.SharedPref getToken" />
+      <entry_point TYPE="field" FQNAME="binar.academy.kelompok6.tripie_admin.data.datastore.SharedPref name" />
+      <entry_point TYPE="field" FQNAME="binar.academy.kelompok6.tripie_admin.data.datastore.SharedPref planeClass" />
+      <entry_point TYPE="field" FQNAME="binar.academy.kelompok6.tripie_admin.data.datastore.SharedPref token" />
+      <entry_point TYPE="field" FQNAME="binar.academy.kelompok6.tripie_admin.view.historybookedticket.adapter.BookedTicketAdapter differ" />
+      <entry_point TYPE="field" FQNAME="binar.academy.kelompok6.tripie_admin.view.historybookedticket.adapter.BookedTicketAdapter filteredBooking" />
+    </entry_points>
+    <pattern value="binar.academy.kelompok6.tripie_admin.view.flightlist.AddFlightFragment" method="getBinding" />
+    <pattern value="binar.academy.kelompok6.tripie_admin.view.flightlist.AddFlightFragment" method="getDateFromDatePicker" />
+    <pattern value="binar.academy.kelompok6.tripie_admin.view.flightlist.AddFlightFragment" method="getNameDestinationAirport" />
+    <pattern value="binar.academy.kelompok6.tripie_admin.data.datastore.SharedPref" method="removeToken" />
+    <pattern value="binar.academy.kelompok6.tripie_admin.data.datastore.SharedPref" method="saveData" />
+    <pattern value="binar.academy.kelompok6.tripie_admin.data.datastore.SharedPref" method="savePlane" />
+    <pattern value="binar.academy.kelompok6.tripie_admin.data.datastore.SharedPref" />
+    <pattern value="binar.academy.kelompok6.tripie_admin.data.datastore.SharedPref" method="SharedPref" />
+    <pattern value="binar.academy.kelompok6.tripie_admin.model.response.DataAddSchedule" />
+    <pattern value="binar.academy.kelompok6.tripie_admin.model.response.DataAddSchedule" method="DataAddSchedule" />
+    <pattern value="binar.academy.kelompok6.tripie_admin.view.historybookedticket.adapter.BookedTicketAdapter.ViewHolder" method="bind" />
+    <pattern value="binar.academy.kelompok6.tripie_admin.view.historybookedticket.adapter.BookedTicketAdapter" />
+    <pattern value="binar.academy.kelompok6.tripie_admin.view.historybookedticket.adapter.BookedTicketAdapter" method="BookedTicketAdapter" />
+    <pattern value="binar.academy.kelompok6.tripie_admin.view.historybookedticket.adapter.BookedTicketAdapter.BookedTicketInterface" />
+    <pattern value="binar.academy.kelompok6.tripie_admin.view.historybookedticket.adapter.BookedTicketAdapter.BookedTicketInterface" method="onItemClick" />
+    <pattern value="binar.academy.kelompok6.tripie_admin.view.historybookedticket.adapter.BookedTicketAdapter" method="setData" />
+    <pattern value="binar.academy.kelompok6.tripie_admin.view.historybookedticket.adapter.BookedTicketAdapter.ViewHolder" />
+    <pattern value="binar.academy.kelompok6.tripie_admin.view.historybookedticket.adapter.BookedTicketAdapter.ViewHolder" method="ViewHolder" />
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

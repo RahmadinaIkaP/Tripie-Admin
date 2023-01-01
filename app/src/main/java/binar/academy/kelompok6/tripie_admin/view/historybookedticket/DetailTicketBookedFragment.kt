@@ -1,12 +1,14 @@
+@file:Suppress("unused", "unused", "unused")
+
 package binar.academy.kelompok6.tripie_admin.view.historybookedticket
 
+import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
-import binar.academy.kelompok6.tripie_admin.R
 import binar.academy.kelompok6.tripie_admin.databinding.FragmentDetailTicketBookedBinding
 import binar.academy.kelompok6.tripie_admin.model.response.Booking
 import binar.academy.kelompok6.tripie_admin.utils.RupiahConverter
@@ -15,6 +17,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.*
 
+@Suppress("unused", "unused", "unused")
 @AndroidEntryPoint
 class DetailTicketBookedFragment : Fragment() {
     private var _binding : FragmentDetailTicketBookedBinding? = null
@@ -39,6 +42,7 @@ class DetailTicketBookedFragment : Fragment() {
         setDataTiket(data)
     }
 
+    @SuppressLint("SetTextI18n")
     private fun setDataTiket(data: Booking?) {
         val dateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.getDefault())
         val flightDate = SimpleDateFormat("d MMMM y",

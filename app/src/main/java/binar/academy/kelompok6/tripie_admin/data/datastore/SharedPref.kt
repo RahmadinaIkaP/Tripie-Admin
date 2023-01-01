@@ -1,3 +1,9 @@
+@file:Suppress("unused", "unused", "unused", "unused", "unused", "unused", "unused", "unused",
+    "unused", "unused", "unused", "unused", "unused", "unused", "unused", "unused", "unused",
+    "unused", "unused", "unused", "unused", "unused", "unused", "unused", "unused", "unused",
+    "unused", "unused", "unused", "unused", "unused", "unused", "unused", "unused", "unused"
+)
+
 package binar.academy.kelompok6.tripie_admin.data.datastore
 
 import android.content.Context
@@ -11,6 +17,11 @@ import kotlinx.coroutines.flow.map
 
 
 private val Context.dataStore : DataStore<Preferences> by preferencesDataStore(name = "user")
+@Suppress("unused", "unused", "unused", "unused", "unused", "unused", "unused", "unused", "unused",
+    "unused", "unused", "unused", "unused", "unused", "unused", "unused", "unused", "unused",
+    "unused", "unused", "unused", "unused", "unused", "unused", "unused", "unused", "unused",
+    "unused", "unused", "unused", "unused", "unused", "unused", "unused"
+)
 class SharedPref(private val context: Context) {
 
     private val token = stringPreferencesKey("token")

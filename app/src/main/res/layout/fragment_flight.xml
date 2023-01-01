@@ -29,9 +29,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:layout_weight="1"
-                android:text="Filter"
+                android:text="@string/filter"
                 android:textAllCaps="false"
-                app:icon="@drawable/ic_filter" />
+                app:icon="@drawable/ic_filter"
+                tools:ignore="InefficientWeight" />
 
 <!--            <com.google.android.material.button.MaterialButton-->
 <!--                android:id="@+id/btnSortPrice"-->
@@ -69,7 +70,7 @@
         app:tint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:contentDescription="Tambah Jadwal Penerbangan" />
+        android:contentDescription="@string/tambah_jadwal_penerbangan" />
 
     <ProgressBar
         android:id="@+id/progressBar"

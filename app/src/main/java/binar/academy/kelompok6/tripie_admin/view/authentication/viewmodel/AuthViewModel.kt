@@ -1,3 +1,5 @@
+@file:Suppress("unused", "unused")
+
 package binar.academy.kelompok6.tripie_admin.view.authentication.viewmodel
 
 import android.util.Log
@@ -15,6 +17,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import javax.inject.Inject
 
+@Suppress("unused", "unused")
 @HiltViewModel
 class AuthViewModel @Inject constructor(private val api : ApiEndpoint) : ViewModel() {
 

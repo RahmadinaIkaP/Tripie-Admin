@@ -1,3 +1,7 @@
+@file:Suppress("unused", "unused", "unused", "unused", "unused", "unused", "unused", "unused",
+    "unused", "unused", "unused"
+)
+
 package binar.academy.kelompok6.tripie_admin.view.flightlist
 
 import android.content.Intent
@@ -23,6 +27,9 @@ import binar.academy.kelompok6.tripie_admin.view.flightlist.adapter.FlightAdapte
 import binar.academy.kelompok6.tripie_admin.view.flightlist.viewmodel.FlightScheduleViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
+@Suppress("unused", "unused", "unused", "unused", "unused", "unused", "unused", "unused", "unused",
+    "unused", "unused"
+)
 @AndroidEntryPoint
 class FlightFragment : Fragment(), FlightAdapter.FlightInterface {
     private var _binding : FragmentFlightBinding? = null

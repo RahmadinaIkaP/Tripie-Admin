@@ -43,7 +43,8 @@
                 android:src="@drawable/ic_plane_white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/todo4" />
 
             <TextView
                 android:id="@+id/tvBandara"
@@ -52,7 +53,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/nunito_semibold"
-                android:text="Bandara"
+                android:text="@string/bandara"
                 android:textColor="@color/gray"
                 android:textSize="16sp"
                 app:layout_constraintStart_toEndOf="@+id/ivBandara"
@@ -64,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:fontFamily="@font/nunito_semibold"
-                android:text="0"
+                android:text="@string/_0"
                 android:textColor="@color/soft_black"
                 android:textSize="16sp"
                 app:layout_constraintStart_toEndOf="@+id/ivBandara"
@@ -99,7 +100,8 @@
                 android:src="@drawable/ic_trolly"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/todo5" />
 
             <TextView
                 android:id="@+id/tvPesanan"
@@ -108,7 +110,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/nunito_semibold"
-                android:text="Pesanan"
+                android:text="@string/pesanan"
                 android:textColor="@color/gray"
                 android:textSize="16sp"
                 app:layout_constraintStart_toEndOf="@+id/ivPesanan"
@@ -120,7 +122,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:fontFamily="@font/nunito_semibold"
-                android:text="0"
+                android:text="@string/_02"
                 android:textColor="@color/soft_black"
                 android:textSize="16sp"
                 app:layout_constraintStart_toEndOf="@+id/ivPesanan"
@@ -154,7 +156,8 @@
                 android:src="@drawable/ic_pengguna"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/todo6" />
 
             <TextView
                 android:id="@+id/tvPengguna"
@@ -163,7 +166,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/nunito_semibold"
-                android:text="Pengguna"
+                android:text="@string/pengguna"
                 android:textColor="@color/gray"
                 android:textSize="16sp"
                 app:layout_constraintStart_toEndOf="@+id/ivPengguna"
@@ -175,7 +178,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:fontFamily="@font/nunito_semibold"
-                android:text="0"
+                android:text="@string/_03"
                 android:textColor="@color/soft_black"
                 android:textSize="16sp"
                 app:layout_constraintStart_toEndOf="@+id/ivPengguna"
@@ -210,7 +213,8 @@
                 android:src="@drawable/ic_admin"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/todo7" />
 
             <TextView
                 android:id="@+id/tvAdmin"
@@ -219,7 +223,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/nunito_semibold"
-                android:text="Admin"
+                android:text="@string/admin"
                 android:textColor="@color/gray"
                 android:textSize="16sp"
                 app:layout_constraintStart_toEndOf="@+id/ivAdmin"
@@ -231,7 +235,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:fontFamily="@font/nunito_semibold"
-                android:text="0"
+                android:text="@string/_04"
                 android:textColor="@color/soft_black"
                 android:textSize="16sp"
                 app:layout_constraintStart_toEndOf="@+id/ivAdmin"

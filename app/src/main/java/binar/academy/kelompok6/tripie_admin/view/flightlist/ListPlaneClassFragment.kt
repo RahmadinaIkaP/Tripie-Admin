@@ -1,19 +1,21 @@
+@file:Suppress("unused", "unused", "unused", "unused", "unused")
+
 package binar.academy.kelompok6.tripie_admin.view.flightlist
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import binar.academy.kelompok6.tripie_admin.R
 import binar.academy.kelompok6.tripie_admin.databinding.FragmentListPlaneClassBinding
 import binar.academy.kelompok6.tripie_admin.model.PlaneClass
 import binar.academy.kelompok6.tripie_admin.view.flightlist.adapter.PlaneClassAdapter
 import binar.academy.kelompok6.tripie_admin.view.flightlist.viewmodel.PlaneClassViewModel
 
+@Suppress("unused", "unused", "unused", "unused", "unused")
 class ListPlaneClassFragment : Fragment(), PlaneClassAdapter.PlaneClassInterface {
     private var _binding : FragmentListPlaneClassBinding? = null
     private val binding get() = _binding!!
