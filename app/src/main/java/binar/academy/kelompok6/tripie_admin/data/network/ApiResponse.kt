@@ -11,8 +11,8 @@ package binar.academy.kelompok6.tripie_admin.data.network
     "unused", "unused", "unused", "unused", "unused", "unused", "unused", "unused", "unused",
     "unused", "unused", "unused", "unused", "unused"
 )
-sealed class ApiResponse<out R>{
-    data class Success<out T>(val data: T? = null) : ApiResponse<T>()
-    data class Loading(val nothing: Nothing? = null) : ApiResponse<Nothing>()
-    data class Error(val msg: String?) : ApiResponse<Nothing>()
+sealed class ApiResponse<T>(val data: T? = null, val msg: String? = null) {
+    class Success<T>(data: T) : ApiResponse<T>(data)
+    class Loading<T>(data: T? = null) : ApiResponse<T>(data)
+    class Error<T>(msg: String, data: T? = null) : ApiResponse<T>(data, msg)
 }

@@ -42,18 +42,15 @@ class AuthViewModel @Inject constructor(private val api : ApiEndpoint) : ViewMod
                         // checking null in var dataHistory
                         data?.let {
                             loginLiveData.postValue(ApiResponse.Success(it)) // post dataHistory response ke sealed class success
-                            Log.d("Success: ", ApiResponse.Success(it).toString())
                         }
                     }else{
                         try {
                             response.errorBody()?.let {
                                 val jsonObject = JSONObject(it.string()).getString("message") // get message response from JSON format
                                 loginLiveData.postValue(ApiResponse.Error(jsonObject)) // post dataHistory response ke sealed class error
-                                Log.d("Error: ", ApiResponse.Error(jsonObject).toString())
                             }
                         } catch (e: Exception) {
                             loginLiveData.postValue(ApiResponse.Error("${e.message}"))
-                            Log.d("Error: ", ApiResponse.Error("${e.message}").toString())
                         }
                     }
 
@@ -62,7 +59,6 @@ class AuthViewModel @Inject constructor(private val api : ApiEndpoint) : ViewMod
 
                 override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                     loginLiveData.postValue(ApiResponse.Error(t.message.toString()))
-                    Log.d("Error: ", ApiResponse.Error(t.message.toString()).toString())
                 }
 
             })
