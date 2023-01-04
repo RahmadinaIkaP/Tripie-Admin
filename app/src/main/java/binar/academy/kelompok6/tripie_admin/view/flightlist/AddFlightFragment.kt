@@ -45,7 +45,7 @@ class AddFlightFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         _binding = FragmentAddFlightBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -184,7 +184,7 @@ class AddFlightFragment : Fragment() {
         ){
             Toast.makeText(requireContext(), "Data tidak boleh kosong", Toast.LENGTH_SHORT).show()
         } else {
-            sharedPref.getToken.asLiveData().observe(requireActivity()){ token ->
+            sharedPref.getToken.asLiveData().observe(viewLifecycleOwner){ token ->
                 flightScheduleViewModel.addFlightSchedule(token, AddEditScheduleRequest(
                     originCode = binding.etOgDestinationCode.text.toString(),
                     originName = binding.etOriginDestination.text.toString(),

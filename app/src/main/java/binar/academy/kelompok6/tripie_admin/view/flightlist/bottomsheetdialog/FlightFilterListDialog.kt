@@ -17,9 +17,7 @@ import binar.academy.kelompok6.tripie_admin.view.MainActivity
 import binar.academy.kelompok6.tripie_admin.view.flightlist.bottomsheetdialog.adapter.PlaneClassFilterAdapter
 import binar.academy.kelompok6.tripie_admin.view.flightlist.viewmodel.PlaneClassViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 
 @Suppress("unused", "unused", "unused", "unused", "unused")
 @OptIn(DelicateCoroutinesApi::class)
@@ -34,7 +32,7 @@ class FlightFilterListDialog : BottomSheetDialogFragment(), PlaneClassFilterAdap
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         _binding = DialogFlightFilterBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -47,7 +45,7 @@ class FlightFilterListDialog : BottomSheetDialogFragment(), PlaneClassFilterAdap
         sharedPref = SharedPref(requireContext())
 
         binding.ivFilterExit.setOnClickListener {
-            dialog?.dismiss()
+            findNavController().navigateUp()
         }
 
         setPlaneFilter()
@@ -73,10 +71,10 @@ class FlightFilterListDialog : BottomSheetDialogFragment(), PlaneClassFilterAdap
             "planeFilter",
             planeClass.kelasPesawat
         )
-        GlobalScope.launch {
+        CoroutineScope(Dispatchers.IO).launch {
             sharedPref.savePlane(planeClass.kelasPesawat)
         }
-        dialog?.dismiss()
+        findNavController().navigateUp()
     }
 
     override fun dismiss() {

@@ -47,7 +47,7 @@ class EditFlightFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         _binding = FragmentEditFlightBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -86,7 +86,7 @@ class EditFlightFragment : Fragment() {
 //            getPlaneClass()
 
             btnUpdateFlight.setOnClickListener {
-                sharedPref.getToken.asLiveData().observe(requireActivity()){ token ->
+                sharedPref.getToken.asLiveData().observe(viewLifecycleOwner){ token ->
                     dataFlightSchedule?.let { data -> editFlightSchedule(token, data.id,
                         AddEditScheduleRequest(
                             etEditOgDestinationCode.text.toString(),

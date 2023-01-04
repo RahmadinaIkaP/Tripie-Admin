@@ -38,15 +38,10 @@ class FlightFragment : Fragment(), FlightAdapter.FlightInterface {
     private lateinit var adapter : FlightAdapter
     private val flightScheduleViewModel : FlightScheduleViewModel by viewModels()
 
-    override fun onResume() {
-        super.onResume()
-        (activity as MainActivity).supportActionBar?.title = "Daftar Penerbangan"
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         _binding = FragmentFlightBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -125,31 +120,33 @@ class FlightFragment : Fragment(), FlightAdapter.FlightInterface {
             "planeFilter"
         )?.observe(viewLifecycleOwner){ pclass ->
             sharedPref.getToken.asLiveData().observe(viewLifecycleOwner){ token ->
-                flightScheduleViewModel.getAllFlightSchedule(token)
+                if (token != "Undefined"){
+                    flightScheduleViewModel.getAllFlightSchedule(token)
+                }
+            }
 
-                flightScheduleViewModel.getAllScheduleObserver().observe(viewLifecycleOwner){ response ->
-                    when(response){
-                        is ApiResponse.Loading -> {
-                            showLoading()
-                            Log.d("Loading: ", response.toString())
+            flightScheduleViewModel.getAllScheduleObserver().observe(viewLifecycleOwner){ response ->
+                when(response){
+                    is ApiResponse.Loading -> {
+                        showLoading()
+                        Log.d("Loading: ", response.toString())
+                    }
+                    is ApiResponse.Success -> {
+                        stopLoading()
+                        response.data?.let {
+                            checkingFilter(pclass, it.data.jadwal)
                         }
-                        is ApiResponse.Success -> {
-                            stopLoading()
-                            response.data?.let {
-                                checkingFilter(pclass, it.data.jadwal)
-                            }
-                            Log.d("Success: ", response.toString())
-                        }
-                        is ApiResponse.Error -> {
-                            stopLoading()
-                            Toast.makeText(requireContext(), response.msg, Toast.LENGTH_SHORT).show()
-                            Log.d("Error: ", response.toString())
+                        Log.d("Success: ", response.toString())
+                    }
+                    is ApiResponse.Error -> {
+                        stopLoading()
+                        Toast.makeText(requireContext(), response.msg, Toast.LENGTH_SHORT).show()
+                        Log.d("Error: ", response.toString())
 
-                            if (response.msg == "Unauthorized"){
-                                val intent = Intent(requireActivity(), LoginActivity::class.java)
-                                startActivity(intent)
-                                requireActivity().finish()
-                            }
+                        if (response.msg == "Unauthorized"){
+                            val intent = Intent(requireActivity(), LoginActivity::class.java)
+                            startActivity(intent)
+                            requireActivity().finish()
                         }
                     }
                 }
